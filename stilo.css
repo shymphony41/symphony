@@ -1,29 +1,39 @@
+/* Estilos generales */
 body {
-    background: linear-gradient(135deg, #b999e9, #d5cedd );
+    background: linear-gradient(500deg, #b999e9, #b999e9);
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 0; /* Elimina el relleno por defecto */
+    font-family: 'Poppins', sans-serif; /* Fuente Poppins en todo el documento */
 }
 
+/* Menú de navegación */
 .menu {
-    background-color: #ecc5e6;
-    padding: 20px;
-    border-bottom: 1px solid #dddddd;
-    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(520deg, #ffffff, #cd90ff);
+    padding: 20px; /* Ajusta el relleno superior e inferior del menú */
+    
+    position: fixed; /* Fija el menú en la parte superior */
+    width: 100%; /* Asegúrate de que el menú ocupe todo el ancho de la página */
+    top: 0; /* Coloca el menú en la parte superior */
+    left: 0;
+    z-index: 1000; /* Asegúrate de que el menú esté por encima de otros elementos */
 }
 
 .menu ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex; /* Muestra los elementos de la lista en una fila horizontal */
+    justify-content: left; /* Alinea los elementos a la izquierda */
 }
 
 .menu li {
-    display: inline;
+    margin: 0 10px; /* Espacio entre los elementos del menú */
 }
 
 .menu li a {
     text-decoration: none;
     color: #853ebe;
     font-size: 18px;
-    margin-right: 20px;
     transition: color 0.3s;
 }
 
@@ -31,31 +41,37 @@ body {
     color: #d49fff;
 }
 
+/* Contenido principal */
 .content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 100px; /* Asegúrate de que el contenido no quede oculto detrás del menú fijo */
 }
 
+/* Sección de Inicio de Viaje */
 .journey-contact {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-bottom: 30px;
-    gap:50px; /* Espacio entre los recuadros */
+    gap: 20px; /* Espacio entre los recuadros */
+    flex-wrap: wrap; /* Permite que los recuadros se ajusten si es necesario */
 }
 
-.start-journey, .results {
-    background: linear-gradient(135deg, #4b1997, #bd9dd5, #7b2dab);
-
+.start-journey {
+    background: linear-gradient(135deg, #36136b, #330f4f, #b339ff);
     padding: 50px;
     border-radius: 10px;
     color: #ffffff;
-    font-family: 'Poppins', sans-serif;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    width: calc(60% - 20px); /* Ajuste para el espacio entre los recuadros */
+    width: calc(50% - 20px); /* Ajuste para el espacio entre los recuadros */
+    box-sizing: border-box; /* Incluye el padding y border en el ancho total */
+    flex: 1;
+    min-width: 300px; /* Ajusta el tamaño mínimo para dispositivos móviles */
 }
 
+/* Estilo para el mensaje dentro del recuadro */
 .start-message, .result-box {
     max-width: 100%;
     font-size: 28px;
@@ -64,17 +80,6 @@ body {
 
 .start-message p, .result-box p {
     font-size: 18px;
-}
-
-.logo img {
-    max-width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-right: 20px;
-    transition: transform 0.3s;
-}
-
-.logo img:hover {
-    transform: scale(1.1);
 }
 
 .start-button button {
@@ -95,38 +100,97 @@ body {
     box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
 }
 
+/* Sección de Resultados */
 .results {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 50px;
+    background: linear-gradient(135deg, #4b1997, #bd9dd5, #7b2dab);
+    padding: 50px;
+    border-radius: 10px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto;
 }
 
-.result-box {
-    width: 45%;
-    background: linear-gradient(135deg, #432372, #b886f5 );
+.results-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Espacio entre los recuadros */
+    flex-wrap: wrap; /* Permite que los recuadros se ajusten si es necesario */
+    margin-bottom: 30px;
+}
+
+.results .result-box, .results .additional-result-box {
+    width: calc(33.33% - 20px); /* Ajuste para el espacio entre los recuadros */
+    background: linear-gradient(135deg, #432372, #b886f5);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    box-sizing: border-box;
+    min-width: 300px; /* Ajusta el tamaño mínimo para dispositivos móviles */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transición suave para el efecto */
 }
 
+.results .result-box h3, .results .additional-result-box h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.results .result-box p, .results .additional-result-box p {
+    font-size: 16px;
+}
+
+/* Efecto de agrandamiento para los recuadros de resultados y otros recuadros */
+.results .result-box:hover, .results .additional-result-box:hover, .info-box:hover {
+    transform: scale(1.05); /* Aumenta el tamaño del recuadro en un 5% */
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3); /* Aumenta la sombra para destacar el recuadro */
+}
+
+/* Estadísticas */
 .stats {
     display: flex;
     justify-content: space-between;
+    gap: 20px; /* Espacio entre los elementos */
+    flex-wrap: wrap; /* Permite que los recuadros se ajusten si es necesario */
+    margin-top: 30px;
 }
 
 .stat-box {
-    width: 30%;
+    background: linear-gradient(135deg, #7b2dab, #bd9dd5);
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: calc(33.33% - 20px); /* Ajuste para el espacio entre los recuadros */
+    box-sizing: border-box;
+    min-width: 200px; /* Ajusta el tamaño mínimo para dispositivos móviles */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transición suave para el efecto */
 }
 
+.stat-box p {
+    font-size: 36px;
+    margin: 0;
+}
+
+.stat-box h4 {
+    font-size: 18px;
+    margin: 10px 0 0;
+}
+
+/* Contenido Adicional */
 .additional-content {
     max-width: 70%;
     text-align: center;
+    margin-top: 50px;
 }
 
 .additional-content h2 {
     font-size: 28px;
     margin-bottom: 20px;
+    background: linear-gradient(135deg, #9716ec, #f3eab8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .additional-content p {
@@ -134,6 +198,36 @@ body {
     margin-bottom: 20px;
 }
 
+.info-boxes {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap; /* Permite que los recuadros se ajusten si es necesario */
+    margin-top: 20px;
+}
+
+.info-box {
+    background: linear-gradient(135deg, #7b2dab, #bd9dd5);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: calc(33.33% - 20px);
+    text-align: center;
+    box-sizing: border-box;
+    min-width: 300px; /* Ajusta el tamaño mínimo para dispositivos móviles */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transición suave para el efecto */
+}
+
+.info-box h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    font-size: 16px;
+}
+
+/* Galería de Imágenes */
 .image-gallery {
     display: flex;
     justify-content: center;
@@ -146,14 +240,3 @@ body {
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-.additional-content h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    background: linear-gradient(135deg, #9716ec, #f3eab8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: 'Poppins', sans-serif;
-}
-
-
