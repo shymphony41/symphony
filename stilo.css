@@ -1,6 +1,6 @@
 /* Estilos generales */
 body {
-    background: linear-gradient(500deg, #b999e9, #b999e9);
+    background-color: #210002;
     margin: 0; /* Elimina el margen por defecto */
     padding: 0; /* Elimina el relleno por defecto */
     font-family: 'Poppins', sans-serif; /* Fuente Poppins en todo el documento */
@@ -8,7 +8,7 @@ body {
 
 /* Menú de navegación */
 .menu {
-    background: linear-gradient(520deg, #ffffff, #cd90ff);
+    background: linear-gradient(520deg, #ffffff, #e6a630);
     padding: 20px; /* Ajusta el relleno superior e inferior del menú */
     
     position: fixed; /* Fija el menú en la parte superior */
@@ -32,13 +32,13 @@ body {
 
 .menu li a {
     text-decoration: none;
-    color: #853ebe;
+    color: #591F1D;
     font-size: 18px;
     transition: color 0.3s;
 }
 
 .menu li a:hover {
-    color: #d49fff;
+    color: #FD0003;
 }
 
 /* Contenido principal */
@@ -102,7 +102,7 @@ body {
 
 /* Sección de Resultados */
 .results {
-    background: linear-gradient(135deg, #4b1997, #bd9dd5, #7b2dab);
+    background-color: #460509;
     padding: 50px;
     border-radius: 10px;
     color: #ffffff;
@@ -122,7 +122,7 @@ body {
 
 .results .result-box, .results .additional-result-box {
     width: calc(33.33% - 20px); /* Ajuste para el espacio entre los recuadros */
-    background: linear-gradient(135deg, #432372, #b886f5);
+    background: linear-gradient(135deg, #460509, #8d550c);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -157,7 +157,7 @@ body {
 }
 
 .stat-box {
-    background: linear-gradient(135deg, #7b2dab, #bd9dd5);
+    background: linear-gradient(135deg, #460509, #8d550c);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
