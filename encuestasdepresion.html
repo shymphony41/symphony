@@ -2,119 +2,89 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Encuesta sobre Depresión y Estado de Ánimo</title>
+  <title>Encuesta de Salud Mental</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'>
   <link rel="stylesheet" href="styledepre.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Encuesta sobre Depresión y Estado de Ánimo</h1>
-    <form action="submit_survey.php" method="post">
-      <div class="form-group">
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div class="form-group">
-        <label for="age">Edad:</label>
-        <input type="number" id="age" name="age" required>
-      </div>
-      <div class="form-group">
-        <label for="gender">Género:</label>
-        <select id="gender" name="gender" required>
-          <option value="">Seleccione</option>
-          <option value="female">Femenino</option>
-          <option value="male">Masculino</option>
-          <option value="other">Otro</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>¿Con qué frecuencia experimentas los siguientes síntomas de depresión?</label>
-        <label>Sentimientos de tristeza o vacío:</label>
-        <div class="options">
-          <label><input type="radio" name="sadness" value="Nunca" required>Nunca</label>
-          <label><input type="radio" name="sadness" value="Raramente" required>Raramente</label>
-          <label><input type="radio" name="sadness" value="A veces" required>A veces</label>
-          <label><input type="radio" name="sadness" value="Frecuentemente" required>Frecuentemente</label>
-          <label><input type="radio" name="sadness" value="Siempre" required>Siempre</label>
+  <div class="card">
+    <div class="card-header">
+      <h3>Encuesta Depresión y Estado de Ánimo</h3>
+    </div>
+    <div class="card-content">
+      <h2>¡Gracias por participar en nuestra encuesta!</h2>
+      <form action="#" method="post">
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required>
         </div>
-      </div>
-      <div class="form-group">
-        <label>Pérdida de interés o placer en actividades:</label>
-        <div class="options">
-          <label><input type="radio" name="loss_interest" value="Nunca" required>Nunca</label>
-          <label><input type="radio" name="loss_interest" value="Raramente" required>Raramente</label>
-          <label><input type="radio" name="loss_interest" value="A veces" required>A veces</label>
-          <label><input type="radio" name="loss_interest" value="Frecuentemente" required>Frecuentemente</label>
-          <label><input type="radio" name="loss_interest" value="Siempre" required>Siempre</label>
+        <div class="form-group">
+          <label for="age">Edad:</label>
+          <input type="number" id="age" name="age" required>
         </div>
-      </div>
-      <div class="form-group">
-        <label>Dificultad para concentrarse:</label>
-        <div class="options">
-          <label><input type="radio" name="concentration" value="Nunca" required>Nunca</label>
-          <label><input type="radio" name="concentration" value="Raramente" required>Raramente</label>
-          <label><input type="radio" name="concentration" value="A veces" required>A veces</label>
-          <label><input type="radio" name="concentration" value="Frecuentemente" required>Frecuentemente</label>
-          <label><input type="radio" name="concentration" value="Siempre" required>Siempre</label>
+        <div class="form-group">
+          <label for="gender">Género:</label>
+          <select id="gender" name="gender" required>
+            <option value="">Seleccione</option>
+            <option value="female">Femenino</option>
+            <option value="male">Masculino</option>
+            <option value="other">Otro</option>
+          </select>
         </div>
-      </div>
-      <div class="form-group">
-        <label>Sentimientos de inutilidad o culpa:</label>
-        <div class="options">
-          <label><input type="radio" name="worthlessness" value="Nunca" required>Nunca</label>
-          <label><input type="radio" name="worthlessness" value="Raramente" required>Raramente</label>
-          <label><input type="radio" name="worthlessness" value="A veces" required>A veces</label>
-          <label><input type="radio" name="worthlessness" value="Frecuentemente" required>Frecuentemente</label>
-          <label><input type="radio" name="worthlessness" value="Siempre" required>Siempre</label>
+
+        <div class="form-group">
+          <label for="q1">1. ¿Con qué frecuencia has experimentado sentimientos de tristeza o desesperanza en las últimas dos semanas?</label>
+          <select id="q1" name="q1" required>
+            <option value="nunca">Nunca</option>
+            <option value="rara_vez">Rara vez</option>
+            <option value="a_veces">A veces</option>
+            <option value="frecuentemente">Frecuentemente</option>
+            <option value="siempre">Siempre</option>
+          </select>
         </div>
-      </div>
-      <div class="form-group">
-        <label>¿Con qué frecuencia experimentas cambios en el apetito?</label>
-        <label>Aumento del apetito:</label>
-        <div class="options">
-          <label><input type="radio" name="increased_appetite" value="Nunca" required>Nunca</label>
-          <label><input type="radio" name="increased_appetite" value="Raramente" required>Raramente</label>
-          <label><input type="radio" name="increased_appetite" value="A veces" required>A veces</label>
-          <label><input type="radio" name="increased_appetite" value="Frecuentemente" required>Frecuentemente</label>
-          <label><input type="radio" name="increased_appetite" value="Siempre" required>Siempre</label>
+
+        <div class="form-group">
+          <label for="q2">2. ¿Qué tan a menudo has sentido falta de interés o placer en hacer cosas que antes disfrutabas?</label>
+          <select id="q2" name="q2" required>
+            <option value="nunca">Nunca</option>
+            <option value="rara_vez">Rara vez</option>
+            <option value="a_veces">A veces</option>
+            <option value="frecuentemente">Frecuentemente</option>
+            <option value="siempre">Siempre</option>
+          </select>
         </div>
-      </div>
-      <div class="form-group">
-        <label>Pérdida de apetito:</label>
-        <div class="options">
-          <label><input type="radio" name="decreased_appetite" value="Nunca" required>Nunca</label>
-          <label><input type="radio" name="decreased_appetite" value="Raramente" required>Raramente</label>
-          <label><input type="radio" name="decreased_appetite" value="A veces" required>A veces</label>
-          <label><input type="radio" name="decreased_appetite" value="Frecuentemente" required>Frecuentemente</label>
-          <label><input type="radio" name="decreased_appetite" value="Siempre" required>Siempre</label>
+
+        <div class="form-group">
+          <label for="q3">3. ¿Has tenido dificultades para concentrarte o tomar decisiones en las últimas semanas?</label>
+          <select id="q3" name="q3" required>
+            <option value="nunca">Nunca</option>
+            <option value="rara_vez">Rara vez</option>
+            <option value="a_veces">A veces</option>
+            <option value="frecuentemente">Frecuentemente</option>
+            <option value="siempre">Siempre</option>
+          </select>
         </div>
-      </div>
-      <div class="form-group">
-        <label>¿Con qué frecuencia experimentas los siguientes síntomas físicos?</label>
-        <label>Fatiga o pérdida de energía:</label>
-        <div class="options">
-          <label><input type="radio" name="fatigue" value="Nunca" required>Nunca</label>
-          <label><input type="radio" name="fatigue" value="Raramente" required>Raramente</label>
-          <label><input type="radio" name="fatigue" value="A veces" required>A veces</label>
-          <label><input type="radio" name="fatigue" value="Frecuentemente" required>Frecuentemente</label>
-          <label><input type="radio" name="fatigue" value="Siempre" required>Siempre</label>
+
+        <div class="form-group">
+          <label for="q4">4. ¿Con qué frecuencia te has sentido cansado/a o con falta de energía sin razón aparente?</label>
+          <select id="q4" name="q4" required>
+            <option value="nunca">Nunca</option>
+            <option value="rara_vez">Rara vez</option>
+            <option value="a_veces">A veces</option>
+            <option value="frecuentemente">Frecuentemente</option>
+            <option value="siempre">Siempre</option>
+          </select>
         </div>
-      </div>
-      <div class="form-group">
-        <label>Problemas para dormir (insomnio o dormir en exceso):</label>
-        <div class="options">
-          <label><input type="radio" name="sleep_issues" value="Nunca" required>Nunca</label>
-          <label><input type="radio" name="sleep_issues" value="Raramente" required>Raramente</label>
-          <label><input type="radio" name="sleep_issues" value="A veces" required>A veces</label>
-          <label><input type="radio" name="sleep_issues" value="Frecuentemente" required>Frecuentemente</label>
-          <label><input type="radio" name="sleep_issues" value="Siempre" required>Siempre</label>
+
+        <div class="form-group">
+          <label for="q5">5. ¿Qué estrategias has intentado para mejorar tu estado de ánimo o combatir la depresión?</label>
+          <textarea id="q5" name="q5" rows="4" placeholder="Escribe aquí tu respuesta..." required></textarea>
         </div>
-      </div>
-      <div class="form-group">
-        <label for="comments">Comentarios adicionales:</label>
-        <textarea id="comments" name="comments" rows="4"></textarea>
-      </div>
-      <button type="submit">Enviar</button>
-    </form>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
   </div>
 </body>
 </html>
