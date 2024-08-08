@@ -1,71 +1,161 @@
-body {
-    background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiZbzI_PBdF-qT8CNFHajqjFKk1sjrxw1OC93d0LiNqBXsYqc3dA1ESgpLwonc2XcnrGRBKIg-P_2PmgJxQOJrX2ALTgJtJOn_zKJ3rSgP7UYLOjtov_ChLtRuam5qzaAtaAy-kNZH4VYLMZMU8-Yi699xKGe1dVechyEItpF8vxjaXsBCX0N6a9rmrR6w/w370-h208/mesh-gradient%20.png);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    color: #e9b3ee;
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 250vh;
-    margin: 0;
+html {
+	box-sizing: border-box;
+	font-family: "Montserrat", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
   }
   
-  .container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
+  *,
+  ::before,
+  ::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+	font-weight: inherit;
+	font-family: inherit;
   }
   
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
+  body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #f0f0f0;
+	background: #101522;
+	background-blend-mode: hard-light;
+	background-image: radial-gradient(circle at 20% 20%, #34074e67 10%, #ffcc7000 50%),
+					  radial-gradient(circle at 80% 80%, #0033ff66 10%, #0033ff00 50%),
+					  radial-gradient(ellipse at 35% 70%, #4a028d66 10%, #00ff4800 50%),
+					  radial-gradient(ellipse at 70% 35%, #ff005d66 10%, #ff005d00 60%);
+	background-size: 250% 250%;
+	animation: background-animation 30s infinite;
+  }
+  
+  @keyframes background-animation {
+	0% { background-position: 5% 0%; }
+	25% { background-position: 20% 80%; }
+	50% { background-position: 96% 100%; }
+	75% { background-position: 80% 10%; }
+	100% { background-position: 5% 0%; }
+  }
+  
+  .card {
+	position: relative;
+	width: 600px;
+	height: 750px;
+	outline: 2px solid #ffffff66;
+	border-radius: 8px;
+	overflow: hidden;
+	background-color: #000000;
+	padding: 20px;
+	background: linear-gradient(135deg, #5a00eb7e, #00000086, #a810d66e);
+	background-blend-mode: overlay;
+  }
+  
+  .card-header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100px;
+	background: #00000099;
+	border-bottom: 1px solid #ffffff66;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(4px);
+  }
+  
+  .card-header h3 {
+	color: #f0f0f0;
+	font-weight: 700;
+	font-size: 2em;
+	text-align: center;
+  }
+  
+  .card-content {
+	margin-top: 120px;
+	padding: 1em;
+	background-color: rgba(255, 255, 255, 0.05);
+	border-radius: 8px;
+	backdrop-filter: blur(10px);
+	overflow-y: auto;
+	max-height: 550px; /* Controla la altura disponible para el contenido desplazable */
+  }
+  
+  .card-content h2 {
+	font-size: 1.5em;
+	font-weight: 700;
+	margin-bottom: 1em;
+	color: #f0f0f0;
+  }
+  
+  form label {
+	display: block;
+	margin-bottom: 0.5em;
+	font-weight: 600;
+	color: #f0f0f0;
+  }
+  
+  form select,
+  form textarea,
+  form input[type="text"],
+  form input[type="number"] {
+	width: 100%;
+	padding: 0.5em;
+	margin-bottom: 0.5em; /* Ajusta el espacio entre el campo y la siguiente pregunta */
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	background-color: #000000;
+	color: #f0f0f0;
+  }
+  
+  form textarea {
+	resize: vertical; /* Permite cambiar el tamaño verticalmente */
+	height: 100px; /* Tamaño inicial del textarea */
   }
   
   .form-group {
-    margin-bottom: 15px;
+	margin-bottom: 1.5em; /* Ajusta el espacio entre las preguntas */
   }
   
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+  form button {
+	display: block;
+	width: 100%;
+	padding: 0.75em;
+	margin-top: 1em;
+	background-color: #0000007a;
+	color: #f7f7f7;
+	font-weight: 700;
+	text-transform: uppercase;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
   }
   
-  input[type="text"],
-  input[type="number"],
-  select,
-  textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+  form button:hover {
+	background-color: #ffffff;
+	color: #000000a4;
+	transition: background-color 0.9s ease;
+	transition: color 0.9s ease;
   }
   
-  .options label {
-    display: block;
-    margin-bottom: 5px;
+  /* Estilo específico para campos de entrada con tamaño ajustable */
+  .form-group input#name {
+	width: 70%; /* Campo de nombre, puede ser más ancho si lo deseas */
   }
   
-  button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
+  .form-group input#age {
+	width: 50%; /* Campo de edad más estrecho */
   }
   
-  button:hover {
-    background-color: #0056b3;
+  .form-group select {
+	width: 100%; /* Selector ocupa el ancho completo */
+  }
+  
+  .form-group textarea {
+	width: 100%; /* Área de texto ocupa el ancho completo */
   }
   
