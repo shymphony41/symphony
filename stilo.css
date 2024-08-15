@@ -8,7 +8,7 @@ body {
 
 /* Menú de navegación */
 .menu {
-    background: linear-gradient(520deg, #ffffff, #e6a630);
+    background: linear-gradient(520deg, #000000c5, #e6a63000, #e6a63000);
     padding: 20px; /* Ajusta el relleno superior e inferior del menú */
     
     position: fixed; /* Fija el menú en la parte superior */
@@ -32,13 +32,13 @@ body {
 
 .menu li a {
     text-decoration: none;
-    color: #591F1D;
+    color: #ffffff;
     font-size: 18px;
     transition: color 0.3s;
 }
 
 .menu li a:hover {
-    color: #FD0003;
+    color: #000000;
 }
 
 /* Contenido principal */
@@ -135,7 +135,7 @@ body {
 .results .result-box h3, .results .additional-result-box h3 {
     font-size: 22px;
     margin-bottom: 10px;
-}
+} 
 
 .results .result-box p, .results .additional-result-box p {
     font-size: 16px;
