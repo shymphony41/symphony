@@ -1,3 +1,46 @@
+/* Estilos generales */
+body {
+    background-color: #210002;
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 40px; /* Añade espacio interno alrededor de los elementos dentro de la barra de menú */
+    font-family: 'Poppins', sans-serif; /* Fuente Poppins en todo el documento */
+}
+
+/* Menú de navegación */
+.menu {
+    background: linear-gradient(520deg, #000000c5, #e6a63000, #e6a63000);
+    padding: 20px; /* Ajusta el relleno superior e inferior del menú */
+    
+    position: fixed; /* Fija el menú en la parte superior */
+    width: 100%; /* Asegúrate de que el menú ocupe todo el ancho de la página */
+    top: 0; /* Coloca el menú en la parte superior */
+    left: 0;
+    z-index: 1000; /* Asegúrate de que el menú esté por encima de otros elementos */
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Muestra los elementos de la lista en una fila horizontal */
+    justify-content: left; /* Alinea los elementos a la izquierda */
+}
+
+.menu li {
+    margin: 0 10px; /* Espacio entre los elementos del menú */
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #000000;
+}
+
 /* Variables para el tamaño del slider */
 :root {
     --slider-width: 1000px;
