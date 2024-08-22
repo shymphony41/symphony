@@ -51,7 +51,7 @@ header{
 }
 .slider .list .item .content{
     position: absolute;
-    top: 25%;
+    top: 15%;
     left: 50%;
     transform: translateX(-50%);
     width: max-content;
