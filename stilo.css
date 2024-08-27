@@ -1,11 +1,10 @@
 /* Estilos generales */
 body {
-    background-color: #210002;
+    background: linear-gradient(520deg, #210002, #210002, #ad380a);
     margin: 0; /* Elimina el margen por defecto */
     padding: 0; /* Elimina el relleno por defecto */
     font-family: 'Poppins', sans-serif; /* Fuente Poppins en todo el documento */
 }
-
 /* Menú de navegación */
 .menu {
     background: linear-gradient(520deg, #000000c5, #e6a63000, #e6a63000);
