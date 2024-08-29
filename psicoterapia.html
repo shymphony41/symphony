@@ -7,11 +7,49 @@
     <title>psicoterapia</title>
 <style>
 body {
-    background-image: url(https://s3.abcstatics.com/abc/www/multimedia/bienestar/2023/07/10/atardecer-verano-1-R6funi5jYXxtpImvVtH33OO-1200x840@abc.jpg);
-    background-size: cover; /* La imagen cubre toda la pantalla */
-    background-repeat: no-repeat; /* La imagen no se repite */
-    background-position: center; /* Centra la imagen en la pantalla */
-    font-family: 'Poppins', sans-serif; /* Fuente Poppins en todo el documento */
+    /* Establecer el tamaño del fondo y sin margen para que ocupe toda la pantalla */
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(80deg, #b85707b4, #ac610bb9, #bb2d0ab7);
+    background-size: 400% 400%;
+    animation: cambioDeColor 15s ease infinite;
+}
+
+@keyframes cambioDeColor {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #000000;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    width: 460px;
+    height: 3px;
+    background-color: #ff0000;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #000000;
 }
 </style>
 </head>
@@ -30,8 +68,12 @@ body {
             <li></li>
             <li></li>
             <li></li>
-    <h1>Video de la psicoterapia</h1>
-    <p>Este es un video que explica en que consiste la psicoterapia.</p>
+            <section id="informacion" class="info-section">
+                <div class="content">
+                    <h2>Video de la psicoterapia</h2>
+                    <p>La salud mental se refiere al bienestar emocional, psicológico y social de una persona. Afecta cómo pensamos, sentimos y actuamos en nuestra vida diaria. También influye en la forma en que manejamos el estrés, nos relacionamos con los demás y tomamos decisiones. La salud mental es importante en todas las etapas de la vida, desde la niñez y la adolescencia hasta la adultez.</p>
+                </div>
+            </section>
 
     <!-- Código de inserción del video de YouTube -->
     <center>
