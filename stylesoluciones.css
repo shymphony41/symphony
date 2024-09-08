@@ -7,6 +7,41 @@ body {
     background-position: center; /* Centra la imagen en la pantalla */
 }
 
+.menu {
+    background: linear-gradient(520deg, #000000c5, #e6a63000, #e6a63000);
+    padding: 20px; /* Ajusta el relleno superior e inferior del menú */
+    
+    position: relative;
+    margin-bottom: 0px;
+    width: 100%; /* Asegúrate de que el menú ocupe todo el ancho de la página */
+    top: 0; /* Coloca el menú en la parte superior */
+    left: 0;
+    z-index: 1000; /* Asegúrate de que el menú esté por encima de otros elementos */
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Muestra los elementos de la lista en una fila horizontal */
+    justify-content: left; /* Alinea los elementos a la izquierda */
+}
+
+.menu li {
+    margin: 0 10px; /* Espacio entre los elementos del menú */
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.menu li a:hover {
+    color: #000000;
+}
+
 .header {
     background-color: rgba(255, 160, 122, 0.7);
     padding: 20px;
