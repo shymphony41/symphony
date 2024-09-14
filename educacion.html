@@ -5,15 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="stilo.css">
     <title>Educacion y conciencia</title>
-<style>
-body {
-    background-image: url(https://s3.abcstatics.com/abc/www/multimedia/bienestar/2023/07/10/atardecer-verano-1-R6funi5jYXxtpImvVtH33OO-1200x840@abc.jpg);
-    background-size: cover; /* La imagen cubre toda la pantalla */
-    background-repeat: no-repeat; /* La imagen no se repite */
-    background-position: center; /* Centra la imagen en la pantalla */
-    font-family: 'Poppins', sans-serif; /* Fuente Poppins en todo el documento */
-}
-</style>
+    <style>
+        body {
+            /* Establecer el tamaño del fondo y sin margen para que ocupe toda la pantalla */
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(80deg, #d86508, #cc730d, #bb2d0aef);
+            background-size: 400% 400%;
+            animation: cambioDeColor 15s ease infinite;
+            cursor: url("https://e7.pngegg.com/pngimages/478/453/png-clipart-computer-mouse-pointer-computer-icons-scalable-graphics-cursor-computer-mouse-angle-electronics.png"), auto;
+        }
+        
+        
+        
+        @keyframes cambioDeColor {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        h2 {
+            font-weight: 600;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #000000;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            width: 500px;
+            height: 3px;
+            background-color: #ff0000;
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+        }
+        
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            padding: 80px;
+            line-height: 1.6;
+            color: #000000;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background-color: #000;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        @media only screen and (max-width: 600px) {
+          video {
+            width: 100%; /* El video ocupará el 100% del ancho en pantallas pequeñas */
+            height: auto;
+          }
+        }
+        
+        
+        </style>
 </head>
 <body>
     <nav class="menu">
@@ -27,15 +103,21 @@ body {
             <li><a href="encuestasemocionales.html">Encuestas</a></li>
         </ul>
       </nav>
-            <li></li>
-            <li></li>
-            <li></li>
-    <h1>Video de la Educacion y conciencia sobre la salud mental.</h1>
-    <p>Este es un video que explica la importancia de conocer de el tema de la salud mental.</p>
 
-    <!-- Código de inserción del video de YouTube -->
+      <section id="informacion" class="info-section">
+        <div class="content">
+    <h2>Video de la Educacion y conciencia sobre la salud mental.</h2>
+    <p>Este es un video que explica la importancia de conocer de el tema de la salud mental.</p>
+</div>
+</section>
+
+<main>
+    <div class="video-wrapper">
     <center>
         <iframe width="600" height="372" src="https://www.youtube.com/embed/3p-5Qe0rDzk" title="La importancia de la salud mental" frameborder="50" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </center>
+</div>
+</main>
+
 </body>
 </html>
