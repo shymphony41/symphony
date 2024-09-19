@@ -1,34 +1,62 @@
-body {
-    font-family: 'Arial', sans-serif;
+html {
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+*,
+::before,
+::after {
     margin: 0;
-    background-image: url(https://s3.abcstatics.com/abc/www/multimedia/bienestar/2023/07/10/atardecer-verano-1-R6funi5jYXxtpImvVtH33OO-1200x840@abc.jpg);
-    background-size: cover; /* La imagen cubre toda la pantalla */
-    background-repeat: no-repeat; /* La imagen no se repite */
-    background-position: center; /* Centra la imagen en la pantalla */
+    padding: 0;
+    box-sizing: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+}
+
+body {
+    height: 100vh;
+    color: #f0f0f0;
+    background: #101522;
+    background-blend-mode: hard-light;
+    background-image: radial-gradient(circle at 20% 20%, #34074e67 10%, #ffcc7000 50%),
+                      radial-gradient(circle at 80% 80%, #0033ff66 10%, #0033ff00 50%),
+                      radial-gradient(ellipse at 35% 70%, #4a028d66 10%, #00ff4800 50%),
+                      radial-gradient(ellipse at 70% 35%, #ff005d66 10%, #ff005d00 60%);
+    background-size: 250% 250%;
+    animation: background-animation 30s infinite;
+}
+
+@keyframes background-animation {
+    0% { background-position: 5% 0%; }
+    25% { background-position: 20% 80%; }
+    50% { background-position: 96% 100%; }
+    75% { background-position: 80% 10%; }
+    100% { background-position: 5% 0%; }
 }
 
 .menu {
-    background: linear-gradient(520deg, #000000c5, #e6a63000, #e6a63000);
-    padding: 20px; /* Ajusta el relleno superior e inferior del menú */
-    
-    position: relative;
-    margin-bottom: 0px;
-    width: 100%; /* Asegúrate de que el menú ocupe todo el ancho de la página */
-    top: 0; /* Coloca el menú en la parte superior */
+    position: fixed;
+    top: 0;
     left: 0;
-    z-index: 1000; /* Asegúrate de que el menú esté por encima de otros elementos */
+    width: 100%;
+    background: linear-gradient(520deg, #000000c5, #e6a63000, #e6a63000);
+    padding: 20px;
+    z-index: 1000;
 }
 
 .menu ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Muestra los elementos de la lista en una fila horizontal */
-    justify-content: left; /* Alinea los elementos a la izquierda */
+    display: flex;
+    justify-content: left;
 }
 
 .menu li {
-    margin: 0 10px; /* Espacio entre los elementos del menú */
+    margin: 0 10px;
 }
 
 .menu li a {
@@ -39,42 +67,48 @@ body {
 }
 
 .menu li a:hover {
-    color: #000000;
+    color: #ffcc70;
 }
 
 .header {
-    background-color: rgba(255, 160, 122, 0.7);
+    background-color: rgba(0, 0, 0, 0.384);
     padding: 20px;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 80px; /* Añadir margen superior para compensar el menú fijo */
+    width: 100%;
 }
 
 h1 {
-    margin: 0;
     color: #fff;
     font-size: 2.5em;
 }
-a {
-    font-size: 0.8em;
-}
+
 .container {
     display: flex;
     justify-content: space-around;
     padding: 50px;
+    flex-wrap: wrap;
 }
 
 .solution-card {
-    background: rgba(240, 161, 58, 0.658);
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
     padding: 20px;
-    width: 250px;
+    width: 310px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.555);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye el contenido para que el botón esté abajo */
+    height: 450px; /* Asegura que todos los recuadros tengan la misma altura */
 }
 
 .solution-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 h2 {
@@ -83,41 +117,33 @@ h2 {
 }
 
 p {
-    color: #444;
+    color: #fdfdfd;
+    margin-bottom: 10px;
+    flex-grow: 1; /* Permite que el texto ocupe el espacio disponible */
 }
 
-/* From Uiverse.io by Codecite */ 
 .btn {
-    transition: all 0.3s ease-in-out;
-    font-family: "Dosis", sans-serif;
-  }
-  
-  .btn {
-    width: 150px;
-    height: 60px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: ;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(135deg, #000000f5 0%, #00000046 100%);
     border-radius: 50px;
-    background-image: linear-gradient(135deg, #feb692 0%, #ea5455 100%);
-    box-shadow: 0 20px 30px -6px rgba(238, 103, 97, 0.5);
-    outline: none;
-    cursor: pointer;
-    border: none;
-    font-size: 24px;
-    color: white;
-  }
-  
-  .btn:hover {
+    box-shadow: 0 0px 30px 6px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.btn:hover {
     transform: translateY(3px);
     box-shadow: none;
-  }
-  
-  .btn:active {
-    opacity: 0.5;
-  }
+   
+}
 
-.extra-info {
-    margin-top: 15px;
-    display: none;
-    color: #fff;
+.btn:active {
+    opacity: 0.8;
 }
 
 @media (max-width: 768px) {
@@ -128,5 +154,6 @@ p {
 
     .solution-card {
         margin-bottom: 20px;
+        width: 90%;
     }
 }
