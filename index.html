@@ -1,111 +1,84 @@
-<!DOCTYPE html>
-<html lang="es" >
-<head>
-  <meta charset="UTF-8">
-  <title>Mente en aromnia</title>
-  <link rel="stylesheet" href="style.css">
+const canvas = document.getElementById('particleCanvas');
+const ctx = canvas.getContext('2d');
 
-</head>
-<body>
+// Initial canvas size
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-<div class="header">
-        <h2><a href="primera.html">Mente en armonia</a></h2>
-        <h2><a href="soluciones.html">Soluciones</a></h2>
-        <h2><a href="apartadocajajuego.html">Juegos</a></h2>
-        <h2><a href="encuestasemocionales.html">Encuestas</a></h2>
-  <div class="mid-spot" onclick="document.body.classList.toggle('gold');"></div>
-  <button class="contact-btn">
-    <span class="glow"></span>
-    <a href="acerca.html">
-    <span class="contact-btn-content">Contactanos</span></a>
-  </button>
+let particles = [];
+let particleCount = calculateParticleCount();
 
-  <div class="spotlight">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-</div>
+class Particle {
+    constructor() {
+        this.reset();
+        this.y = Math.random() * canvas.height;
+        this.fadeDelay = Math.random() * 600 + 100;
+        this.fadeStart = Date.now() + this.fadeDelay;
+        this.fadingOut = false;
+    }
 
-<canvas id="particleCanvas"></canvas>
+    reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.speed = Math.random() / 5 + 0.1;
+        this.opacity = 1;
+        this.fadeDelay = Math.random() * 600 + 100;
+        this.fadeStart = Date.now() + this.fadeDelay;
+        this.fadingOut = false;
+    }
 
-<div class="accent-lines">
-  <div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-  <div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-</div>
-<div class="heroSubP">
-  <p>Cuida tu mente, transforma tu vida</p>
-</div>
-<div class="hero">
-  <div class="heroT">
-    <h2>Bienvenidos</h2>
-    <h2>Bienvenidos</h2>
-  </div>
-</div>
-<p class="heroP">Descubre un nuevo mundo de bienestar emocional y mejora tu calidad de vida.</p>
-<div class="mountains">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-<div class="hero-spacer"></div>
+    update() {
+        this.y -= this.speed;
+        if (this.y < 0) {
+            this.reset();
+        }
 
-<div class="content-section">
-  <div class="content-acc">
-    <div></div>
-    <div></div>
-  </div>
-  <p class="subt">Revolutionary by design</p>
-  <h3 class="title">¿Que es mente en armonia?<br></h3>
-  <p class="subp">Aquí en mente en armonía diseñamos esta pagina para ofrecerte herramientas, información y recursos efectivos para aprender sobre la salud mental,  gestionar el estrés, la ansiedad y mejorar tu bienestar general.</p>
-  <button class="boton-primario"><a href="item.html" style="color: rgb(52, 55, 226);">Empezar</a></button>
-</div>
+        if (!this.fadingOut && Date.now() > this.fadeStart) {
+            this.fadingOut = true;
+        }
+        
+        if (this.fadingOut) {
+            this.opacity -= 0.008;
+            if (this.opacity <= 0) {
+                this.reset();
+            }
+        }
+    }
 
-<section class="results">
-  <div class="results-content">
-      <div class="result-box">
-          <h3>Resultados reales en tan sólo 12 semanas</h3>
-          <p>Nuestro programa ha demostrado tener un impacto positivo significativo en los niveles de estrés, ansiedad e insomnio.</p>
-          <p>Estos resultados se basan en estudios y testimonios reales de participantes que han mejorado su bienestar emocional y mental.</p>
-      </div>
-      <div class="additional-result-box">
-          <h3>Mejoras en el Bienestar General</h3>
-          <p>Los participantes han reportado una mejora en su bienestar general, incluyendo un aumento en la felicidad y una mayor satisfacción con la vida.</p>
-      </div>
-      <div class="additional-result-box">
-          <h3>Reducción de Síntomas de Depresión</h3>
-          <p>El programa también ha ayudado a reducir los síntomas de depresión en muchos de nuestros participantes, ayudándoles a llevar una vida más equilibrada.</p>
-      </div>
-  </div>
-  <div class="stats">
-      <div class="stat-box">
-          <p>80%</p>
-          <h4>Reducción del Estrés</h4>
-      </div>
-      <div class="stat-box">
-          <p>70%</p>
-          <h4>Mejora en el Sueño</h4>
-      </div>
-      <div class="stat-box">
-          <p>65%</p>
-          <h4>Reducción de la Ansiedad</h4>
-      </div>
-  </div>
-</section>
+    draw() {
+        ctx.fillStyle = `rgba(${255 - (Math.random() * 255/2)}, 255, 255, ${this.opacity})`;
+        ctx.fillRect(this.x, this.y, 0.4, Math.random() * 2 + 1);
+    }
+}
 
-<!-- partial -->
-  <script  src="script.js"></script>
+function initParticles() {
+    particles = [];
+    for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+    }
+}
 
-</body>
-</html>
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+    });
+    requestAnimationFrame(animate);
+}
+
+function calculateParticleCount() {
+    return Math.floor((canvas.width * canvas.height) / 6000);
+}
+
+function onResize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    particleCount = calculateParticleCount();
+    initParticles();
+}
+
+window.addEventListener('resize', onResize);
+
+initParticles();
+animate();
