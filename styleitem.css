@@ -3,12 +3,12 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background: #05060f linear-gradient(0deg,rgba(216,236,248,.06),rgba(152,192,239,.06));
     color: #333;
 }
 
 header {
-    background: linear-gradient(520deg, #d3934a, #210002d5, #ad380a);
+    background: linear-gradient(520deg, #4aa8d3cb, #000000, #ada20a8a);
     color: #fff;
     padding: 20px 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -66,7 +66,8 @@ h2 {
     font-weight: 600;
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: #00796b;
+    color: white;
+    text-shadow: 0px 0px 10px cyan;
     position: relative;
 }
 
@@ -183,6 +184,9 @@ button {
     font-size: 1em;
     font-weight: 600;
     transition: background-color 0.3s ease;
+    display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button:hover {
