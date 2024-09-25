@@ -782,3 +782,52 @@ p {
     font-size: 18px;
     margin: 10px 0 0;
 }
+
+/* Dispositivos móviles pequeños (hasta 600px) */
+@media (max-width: 600px) {
+    .header h2 {
+        font-size: 0.8em;
+    }
+
+    .contact-btn {
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 6em;
+    }
+
+    .heroT h2 {
+        font-size: 4em;
+    }
+
+    .heroP {
+        font-size: 1em;
+    }
+
+    .results .result-box, .results .additional-result-box, .stat-box {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .accent-lines > div {
+        display: none;
+    }
+}
+
+/* Tablets (entre 600px y 900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+    .heroT h2 {
+        font-size: 5em;
+    }
+
+    .contact-btn {
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 7em;
+    }
+
+    .results .result-box, .results .additional-result-box, .stat-box {
+        width: calc(50% - 20px);
+    }
+}
