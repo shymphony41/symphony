@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados de la Encuesta</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300;display=swap'>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      padding: 20px;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f4f4f4;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="result">
+    <h2>Resultados de la Encuesta</h2>
+    <div id="feedback"></div>
+  </div>
+
+  <script>
+    // Función para obtener parámetros de la URL
+    function getQueryParams() {
+      const params = {};
+      window.location.search.substring(1).split("&").forEach(function(pair) {
+        const [key, value] = pair.split("=");
+        params[decodeURIComponent(key)] = decodeURIComponent(value || '');
+      });
+      return params;
+    }
+
+    const data = getQueryParams();
+
+    // Mostrar los resultados
+    const feedbackDiv = document.getElementById('feedback');
+    feedbackDiv.innerHTML = `
+      <p><strong>Nombre:</strong> ${data.name}</p>
+      <p><strong>Edad:</strong> ${data.age}</p>
+      <p><strong>Género:</strong> ${data.gender}</p>
+      <p><strong>Estado emocional:</strong> ${data.q1}</p>
+      <p><strong>Dificultades para dormir:</strong> ${data.q2}</p>
+      <p><strong>Pensamientos sobre autolesiones:</strong> ${data.q3}</p>
+      <p><strong>Capacidad para manejar emociones:</strong> ${data.q4}</p>
+      <p><strong>Comentario:</strong> ${data.q5}</p>
+    `;
+
+    // Lógica para mostrar el plan de mejora
+    let plan = '';
+    if (data.q1 === 'triste' || data.q3 === 'frecuentemente' || data.q4 === 'muy_mala') {
+      plan = `<h3>Plan de Mejora Intensivo</h3>
+              <p>Parece que estás atravesando un momento difícil. Te sugerimos:</p>
+              <ul>
+                <li>Consultar a un profesional de salud mental lo antes posible.</li>
+                <li>Practicar la meditación diaria para reducir la ansiedad.</li>
+                <li>Crear una rutina de sueño consistente para mejorar el descanso.</li>
+              </ul>`;
+    } else if (data.q1 === 'neutral' || data.q2 === 'frecuentemente') {
+      plan = `<h3>Plan de Mejora Moderado</h3>
+              <p>Tu estado emocional está relativamente estable, pero podría mejorar. Te sugerimos:</p>
+              <ul>
+                <li>Incluir ejercicio físico en tu rutina diaria para mejorar tu bienestar general.</li>
+                <li>Intentar técnicas de relajación como yoga o respiración profunda.</li>
+                <li>Reservar tiempo para actividades que disfrutes y te relajen.</li>
+              </ul>`;
+    } else {
+      plan = `<h3>Plan de Bienestar</h3>
+              <p>¡Te encuentras en un buen estado emocional! Aquí hay algunas sugerencias para mantenerlo:</p>
+              <ul>
+                <li>Continúa con hábitos saludables como la actividad física y una dieta equilibrada.</li>
+                <li>Mantén relaciones sociales positivas y apoyo emocional.</li>
+                <li>Dedica tiempo a tus hobbies y pasatiempos para mantener el equilibrio.</li>
+              </ul>`;
+    }
+
+    feedbackDiv.innerHTML += plan; // Añadir el plan al resultado
+  </script>
+</body>
+</html>
 
