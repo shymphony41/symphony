@@ -14,7 +14,7 @@
     </div>
     <div class="card-content">
       <h2>¡Gracias por participar en nuestra encuesta!</h2>
-      <form action="#" method="post">
+      <form id="survey-form">
         <div class="form-group">
           <label for="name">Nombre:</label>
           <input type="text" id="name" name="name" required>
@@ -85,5 +85,25 @@
       </form>
     </div>
   </div>
+
+  <script>
+    document.getElementById('survey-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Detener el envío del formulario
+
+      // Obtener las respuestas del formulario
+      const name = document.getElementById('name').value;
+      const age = document.getElementById('age').value;
+      const gender = document.getElementById('gender').value;
+      const q1 = document.getElementById('q1').value;
+      const q2 = document.getElementById('q2').value;
+      const q3 = document.getElementById('q3').value;
+      const q4 = document.getElementById('q4').value;
+      const q5 = document.getElementById('q5').value;
+
+      // Redirigir a la nueva página con los datos del formulario
+      const resultPage = `resultado.html?name=${encodeURIComponent(name)}&age=${age}&gender=${gender}&q1=${q1}&q2=${q2}&q3=${q3}&q4=${q4}&q5=${encodeURIComponent(q5)}`;
+      window.location.href = resultPage; // Redireccionar
+    });
+  </script>
 </body>
 </html>
