@@ -7,16 +7,61 @@
     <title>vida saludable</title>
     <style>
         body {
-            /* Establecer el tamaño del fondo y sin margen para que ocupe toda la pantalla */
-            margin: 0;
-            height: 100vh;
-            background: linear-gradient(80deg, #d86508, #cc730d, #bb2d0aef);
-            background-size: 400% 400%;
-            animation: cambioDeColor 15s ease infinite;
-            cursor: url("https://e7.pngegg.com/pngimages/478/453/png-clipart-computer-mouse-pointer-computer-icons-scalable-graphics-cursor-computer-mouse-angle-electronics.png"), auto;
+            font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #05060f linear-gradient(0deg,rgba(216,236,248,.06),rgba(116, 167, 224, 0.06));
+    color: #333;
         }
         
-        
+        header {
+    background: linear-gradient(520deg, #4aa8d3cb, #000000, #ada20a8a);
+    color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #000000;
+    border-radius: 4px;
+}
         
         @keyframes cambioDeColor {
             0% {
@@ -34,7 +79,8 @@
             font-weight: 600;
             font-size: 2.5em;
             margin-bottom: 20px;
-            color: #000000;
+            color: white;
+            text-shadow: 0px 0px 10px cyan;
             position: relative;
         }
         
@@ -42,7 +88,7 @@
             content: '';
             width: 500px;
             height: 3px;
-            background-color: #ff0000;
+            background-color: #0b9b6b;
             position: absolute;
             bottom: -10px;
             left: 0;
@@ -53,7 +99,7 @@
             margin-bottom: 30px;
             padding: 80px;
             line-height: 1.6;
-            color: #000000;
+            color: #ffffff;
         }
         
         .video-wrapper {
@@ -92,22 +138,21 @@
         </style>
 </head>
 <body>
-    <nav class="menu">
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="importancia.html">Importancia</a></li>
-            <li><a href="causas.html">Causas</a></li>
-            <li><a href="soluciones.html">Soluciones</a></li>
-            <li><a href="acerca.html">Acerca de</a></li>
-            <li><a href="apartadocajajuego.html">Juegos</a></li>
-            <li><a href="encuestasemocionales.html">Encuestas</a></li>
-        </ul>
-      </nav>
+
+    <header>
+        <nav>
+            <div class="logo">Mente en armonia</div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="soluciones.html">Regresar</a></li>
+            </ul>
+        </nav>
+    </header>
 
       <section id="informacion" class="info-section">
         <div class="content">
     <h2>Video de consejos saludable</h2>
-    <p>Este es un video que da consejos de un estilo de vida saludable</p>
+    <p>Llevar una vida saludable es clave para prevenir enfermedades como diabetes y problemas cardíacos. Además, mejora el bienestar mental al reducir el estrés y la ansiedad, aumentando la energía y productividad diaria. También contribuye a una vida más larga y de mejor calidad, al fortalecer el sistema inmunológico y prevenir complicaciones a lo largo del tiempo. En resumen, una vida activa y equilibrada te permite disfrutar de más bienestar físico y emocional.</p>
 </div>
 </section>
 
