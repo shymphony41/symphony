@@ -22,8 +22,8 @@
       <!-- Aquí van los resultados de la encuesta -->
     </div>
     
-    <h3 style="text-align: center;">Plan de Mejora Intensivo</h3>
-    <p>Parece que estás atravesando un momento difícil. Te sugerimos:</p>
+    <h3 style="text-align: center;" id="plan-title"></h3>
+    <p id="plan-description"></p>
 
     <!-- Botón para mostrar la rutina -->
     <div class="button-container">
@@ -32,14 +32,8 @@
 
     <!-- Rutina personalizada (inicialmente oculta) -->
     <div id="routine" style="display: none;">
-      <h4>Rutina de 5 semanas para mejorar la salud mental</h4>
-      <ol>
-        <li><strong>Semana 1:</strong> Focalizarse en el autocuidado. Establecer una rutina diaria con buen descanso, alimentación y ejercicio ligero. Conectar con seres queridos.</li>
-        <li><strong>Semana 2:</strong> Empezar a manejar los pensamientos negativos escribiendo un diario emocional y usando afirmaciones positivas.</li>
-        <li><strong>Semana 3:</strong> Introducir actividades físicas y creativas como caminar, pintar, o tocar música. Realizar ejercicios de respiración profunda.</li>
-        <li><strong>Semana 4:</strong> Dedicar tiempo de calidad a socializar. Hacer una lista diaria de gratitud. Limitar el uso de redes sociales para evitar sobrecarga emocional.</li>
-        <li><strong>Semana 5:</strong> Reflexionar sobre los avances y planificar el futuro. Establecer metas pequeñas y continuar trabajando en hábitos saludables.</li>
-      </ol>
+      <h4 id="routine-title"></h4>
+      <ol id="routine-list"></ol>
     </div>
 
     <!-- Botón para descargar la rutina en PDF -->
@@ -73,6 +67,54 @@
       <p><strong>Capacidad para manejar emociones:</strong> ${data.q4}</p>
       <p><strong>Comentario:</strong> ${data.q5}</p>
     `;
+
+    // Evaluar las respuestas y mostrar el plan correspondiente
+    function mostrarPlan() {
+      const q1 = data.q1;
+      const q2 = data.q2;
+      const q3 = data.q3;
+      const q4 = data.q4;
+
+      let plan = '';
+      let rutina = '';
+
+      if (q1 === 'muy_triste' || q2 === 'frecuentemente' || q3 === 'frecuentemente' || q4 === 'muy_mala') {
+        // Plan intensivo
+        document.getElementById('plan-title').innerText = 'Plan de Mejora Intensivo';
+        document.getElementById('plan-description').innerText = 'Parece que estás atravesando un momento difícil. Te sugerimos el siguiente plan:';
+        document.getElementById('routine-title').innerText = 'Rutina de 5 semanas para mejorar la salud mental';
+        document.getElementById('routine-list').innerHTML = `
+          <li><strong>Semana 1:</strong> Focalizarse en el autocuidado. Establecer una rutina diaria con buen descanso, alimentación y ejercicio ligero. Conectar con seres queridos.</li>
+          <li><strong>Semana 2:</strong> Empezar a manejar los pensamientos negativos escribiendo un diario emocional y usando afirmaciones positivas.</li>
+          <li><strong>Semana 3:</strong> Introducir actividades físicas y creativas como caminar, pintar, o tocar música. Realizar ejercicios de respiración profunda.</li>
+          <li><strong>Semana 4:</strong> Dedicar tiempo de calidad a socializar. Hacer una lista diaria de gratitud. Limitar el uso de redes sociales para evitar sobrecarga emocional.</li>
+          <li><strong>Semana 5:</strong> Reflexionar sobre los avances y planificar el futuro. Establecer metas pequeñas y continuar trabajando en hábitos saludables.</li>
+        `;
+      } else if (q1 === 'neutral' || q2 === 'a_veces' || q4 === 'neutral') {
+        // Plan moderado
+        document.getElementById('plan-title').innerText = 'Plan de Rutina Moderada';
+        document.getElementById('plan-description').innerText = 'Parece que estás en un estado intermedio. Te sugerimos esta rutina moderada:';
+        document.getElementById('routine-title').innerText = 'Rutina de 4 semanas para mejorar tu salud mental';
+        document.getElementById('routine-list').innerHTML = `
+          <li><strong>Semana 1:</strong> Fortalecer el autocuidado y enfocarse en mejorar la calidad del sueño y la alimentación.</li>
+          <li><strong>Semana 2:</strong> Implementar actividades de relajación como la meditación o la respiración profunda.</li>
+          <li><strong>Semana 3:</strong> Realizar actividades físicas moderadas, como caminatas o yoga, y socializar con amigos o familiares.</li>
+          <li><strong>Semana 4:</strong> Revisar tus avances y continuar con la rutina, añadiendo nuevos hábitos saludables poco a poco.</li>
+        `;
+      } else {
+        // Plan de 3 semanas
+        document.getElementById('plan-title').innerText = 'Plan de Rutina de 3 Semanas';
+        document.getElementById('plan-description').innerText = 'Te encuentras en un buen estado emocional. Te sugerimos este plan corto para mantener y mejorar tu bienestar:';
+        document.getElementById('routine-title').innerText = 'Rutina de 3 semanas para mantener un estado emocional positivo';
+        document.getElementById('routine-list').innerHTML = `
+          <li><strong>Semana 1:</strong> Continuar con tus hábitos saludables de alimentación, sueño y ejercicio.</li>
+          <li><strong>Semana 2:</strong> Añadir actividades que disfrutes y te relajen, como leer, pintar, o tocar música.</li>
+          <li><strong>Semana 3:</strong> Reflexionar sobre tus logros y establecer nuevas metas para seguir avanzando.</li>
+        `;
+      }
+    }
+
+    mostrarPlan();
 
     // Mostrar/ocultar la rutina
     function toggleRoutine() {
