@@ -19,7 +19,7 @@ html {
     margin-top: 20px;
     padding: 25px;
     background-color: #000000f8;
-    border-left: 5px solid #830c0c;
+    border-left: 5px solid #ffd000;
     border-radius: 8px;
     animation: fadeIn 0.8s ease-in-out;
 	
@@ -94,7 +94,7 @@ h3 {
     width: 100%;
 	padding: 1px 0px;
 	background-color: #bebebe46;
-	color: #810101;
+	color: #ffd000;
 	border: none;
 	border-radius: 1px;
 	margin-top: 20px;
@@ -140,7 +140,7 @@ button:hover {
 	margin-top: 20px;
 	padding: 25px;
 	background-color: #0000004d;
-	border-left: 5px solid #500da786;
+	border-left: 5px solid #ffd000;
 	border-radius: 8px;
 	animation: fadeIn 0.5s ease-in-out;
 }
