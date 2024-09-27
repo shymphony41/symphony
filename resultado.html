@@ -2,30 +2,54 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resultados de la Encuesta</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300;display=swap'>
+  <link rel="stylesheet" href="resultado.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      padding: 20px;
-    }
-    .result {
+    /* Estilo adicional para centrar los botones */
+    .button-container {
+      display: flex;
+      justify-content: center;
       margin-top: 20px;
-      padding: 20px;
-      background-color: #f4f4f4;
-      border-radius: 5px;
     }
   </style>
 </head>
 <body>
   <div class="result">
     <h2>Resultados de la Encuesta</h2>
-    <div id="feedback"></div>
+    <div id="feedback">
+      <!-- Aquí van los resultados de la encuesta -->
+    </div>
+    
+    <h3 style="text-align: center;">Plan de Mejora Intensivo</h3>
+    <p>Parece que estás atravesando un momento difícil. Te sugerimos:</p>
+
+    <!-- Botón para mostrar la rutina -->
+    <div class="button-container">
+      <button onclick="toggleRoutine()">Mostrar Rutina Personalizada</button>
+    </div>
+
+    <!-- Rutina personalizada (inicialmente oculta) -->
+    <div id="routine" style="display: none;">
+      <h4>Rutina de 5 semanas para mejorar la salud mental</h4>
+      <ol>
+        <li><strong>Semana 1:</strong> Focalizarse en el autocuidado. Establecer una rutina diaria con buen descanso, alimentación y ejercicio ligero. Conectar con seres queridos.</li>
+        <li><strong>Semana 2:</strong> Empezar a manejar los pensamientos negativos escribiendo un diario emocional y usando afirmaciones positivas.</li>
+        <li><strong>Semana 3:</strong> Introducir actividades físicas y creativas como caminar, pintar, o tocar música. Realizar ejercicios de respiración profunda.</li>
+        <li><strong>Semana 4:</strong> Dedicar tiempo de calidad a socializar. Hacer una lista diaria de gratitud. Limitar el uso de redes sociales para evitar sobrecarga emocional.</li>
+        <li><strong>Semana 5:</strong> Reflexionar sobre los avances y planificar el futuro. Establecer metas pequeñas y continuar trabajando en hábitos saludables.</li>
+      </ol>
+    </div>
+
+    <!-- Botón para descargar la rutina en PDF -->
+    <div class="button-container">
+      <button id="downloadBtn">Descargar Rutina</button>
+    </div>
   </div>
 
   <script>
-    // Función para obtener parámetros de la URL
+    // Función para obtener los parámetros de la URL
     function getQueryParams() {
       const params = {};
       window.location.search.substring(1).split("&").forEach(function(pair) {
@@ -37,7 +61,7 @@
 
     const data = getQueryParams();
 
-    // Mostrar los resultados
+    // Mostrar los resultados en el div #feedback
     const feedbackDiv = document.getElementById('feedback');
     feedbackDiv.innerHTML = `
       <p><strong>Nombre:</strong> ${data.name}</p>
@@ -50,36 +74,29 @@
       <p><strong>Comentario:</strong> ${data.q5}</p>
     `;
 
-    // Lógica para mostrar el plan de mejora
-    let plan = '';
-    if (data.q1 === 'triste' || data.q3 === 'frecuentemente' || data.q4 === 'muy_mala') {
-      plan = `<h3>Plan de Mejora Intensivo</h3>
-              <p>Parece que estás atravesando un momento difícil. Te sugerimos:</p>
-              <ul>
-                <li>Consultar a un profesional de salud mental lo antes posible.</li>
-                <li>Practicar la meditación diaria para reducir la ansiedad.</li>
-                <li>Crear una rutina de sueño consistente para mejorar el descanso.</li>
-              </ul>`;
-    } else if (data.q1 === 'neutral' || data.q2 === 'frecuentemente') {
-      plan = `<h3>Plan de Mejora Moderado</h3>
-              <p>Tu estado emocional está relativamente estable, pero podría mejorar. Te sugerimos:</p>
-              <ul>
-                <li>Incluir ejercicio físico en tu rutina diaria para mejorar tu bienestar general.</li>
-                <li>Intentar técnicas de relajación como yoga o respiración profunda.</li>
-                <li>Reservar tiempo para actividades que disfrutes y te relajen.</li>
-              </ul>`;
-    } else {
-      plan = `<h3>Plan de Bienestar</h3>
-              <p>¡Te encuentras en un buen estado emocional! Aquí hay algunas sugerencias para mantenerlo:</p>
-              <ul>
-                <li>Continúa con hábitos saludables como la actividad física y una dieta equilibrada.</li>
-                <li>Mantén relaciones sociales positivas y apoyo emocional.</li>
-                <li>Dedica tiempo a tus hobbies y pasatiempos para mantener el equilibrio.</li>
-              </ul>`;
+    // Mostrar/ocultar la rutina
+    function toggleRoutine() {
+      const routineDiv = document.getElementById('routine');
+      routineDiv.style.display = routineDiv.style.display === 'none' ? 'block' : 'none';
     }
 
-    feedbackDiv.innerHTML += plan; // Añadir el plan al resultado
+    // Función para descargar la rutina en PDF
+    document.getElementById('downloadBtn').addEventListener('click', function() {
+      const { jsPDF } = window.jspdf; // Asegúrate de tener jsPDF disponible
+      const doc = new jsPDF();
+
+      // Agrega el título al PDF
+      doc.setFontSize(22);
+      doc.text('Rutina Personalizada de Bienestar Mental', 20, 20);
+
+      // Extraer el contenido de la rutina y agregarlo al PDF
+      const routineContent = document.getElementById('routine').innerText;
+      doc.setFontSize(14);
+      doc.text(routineContent, 20, 40);
+
+      // Descargar el PDF
+      doc.save('Rutina-Personalizada.pdf');
+    });
   </script>
 </body>
 </html>
-
