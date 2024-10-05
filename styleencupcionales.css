@@ -59,13 +59,70 @@ body::after {
 }
 .card {
 	position: relative;
+	margin-top: 8em;
 	width: 300px;
 	height: 600px;
 	outline: 2px solid #ffffff66;
 	border-radius: 8px;
 	overflow: hidden;
 	background-color: #000000;
+	justify-content: center;
 }
+
+header {
+    background: linear-gradient(520deg, #1f0b7800, #8505cf00, #5724ce00);
+    color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%; /* Extiende el header a todo el ancho */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* O ajusta según prefieras para el contenido interno */
+    margin: auto;
+    padding: 0 20px;
+    box-sizing: border-box; /* Para asegurarse de que el padding no aumente el ancho total */
+}
+
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #000000;
+    border-radius: 4px;
+}
+
 
 /*checkbox*/
 input[type="checkbox"] {
