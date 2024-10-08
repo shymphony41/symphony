@@ -28,7 +28,7 @@ html {
 					  radial-gradient(circle at 80% 80%, #790b3566 10%, #00ffdd00 50%),
 					  radial-gradient(ellipse at 35% 70%, #ff242466 10%, #00ff4800 50%),
 					  radial-gradient(ellipse at 70% 35%, #9738b466 10%, #ff00d400 60%);
-	background-size: 250% 250%;
+	background-size: 250% 350%;
 	animation: background-animation 30s infinite;
   }
   
@@ -44,7 +44,7 @@ html {
     background: linear-gradient(520deg, #1f0b7800, #8505cf00, #5724ce00);
     color: #fff;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 7px 8px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%; /* Extiende el header a todo el ancho */
     top: 0;
@@ -92,7 +92,7 @@ nav ul li a:hover {
 .card {
     position: relative;
     width: 600px;
-    margin-top: 230px; /* Espacio superior para evitar que el contenido se superponga con el header */
+    margin-top: 10px; /* Espacio superior para evitar que el contenido se superponga con el header */
     outline: 2px solid #ffffff66;
     border-radius: 8px;
     overflow: hidden;
