@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultados del Estrés</title>
+  <link rel="stylesheet" href="resultadoestres.css">
+</head>
+<body>
+  <div class="result">
+    <h2>Resultados de la Encuesta de Estrés</h2>
+    <div id="feedback"></div>
+    
+    <h3 style="text-align: center;" id="plan-title"></h3>
+    <p id="plan-description"></p>
+
+    <!-- Botón para mostrar la rutina -->
+    <div class="button-container">
+      <button onclick="toggleRoutine()">Mostrar Plan Personalizado</button>
+    </div>
+
+    <!-- Rutina personalizada (inicialmente oculta) -->
+    <div id="routine" style="display: none;">
+      <h4 id="routine-title"></h4>
+      <ol id="routine-list"></ol>
+      <button id="downloadBtn">Descargar Plan</button>
+    </div>
+
+    <script>
+      // Obtener los parámetros de la URL
+      function getQueryParams() {
+        const params = {};
+        window.location.search.substring(1).split("&").forEach(function(pair) {
+          const [key, value] = pair.split("=");
+          params[decodeURIComponent(key)] = decodeURIComponent(value || '');
+        });
+        return params;
+      }
+
+      const data = getQueryParams();
+
+      // Mostrar los resultados en el div #feedback
+      const feedbackDiv = document.getElementById('feedback');
+      feedbackDiv.innerHTML = `
+        <p><strong>Nombre:</strong> ${data.name}</p>
+        <p><strong>Edad:</strong> ${data.age}</p>
+        <p><strong>Género:</strong> ${data.gender}</p>
+        <p><strong>Frecuencia de Estrés:</strong> ${data.q1}</p>
+        <p><strong>Capacidad para Manejar el Estrés:</strong> ${data.q2}</p>
+        <p><strong>Frecuencia de Síntomas Físicos:</strong> ${data.q3}</p>
+        <p><strong>Afectación por Ansiedad:</strong> ${data.q4}</p>
+        <p><strong>Estrategias de Manejo:</strong> ${data.q5}</p>
+      `;
+
+      // Evaluar las respuestas y mostrar el plan correspondiente
+      function mostrarPlan() {
+        const q1 = data.q1;
+        const q2 = data.q2;
+        const q3 = data.q3;
+        const q4 = data.q4;
+
+        // Lógica para determinar el plan
+        let planTitle = '';
+        let planDescription = '';
+        let routineTitle = '';
+        let routineList = '';
+
+        if ([q1, q3, q4].includes('frecuentemente') || [q1, q3, q4].includes('siempre')) {
+          planTitle = 'Plan Intensivo de Reducción de Estrés';
+          planDescription = 'Parece que estás atravesando un periodo complicado. Te recomendamos buscar apoyo profesional y adoptar estrategias efectivas para manejar el estrés y la ansiedad.';
+          routineTitle = 'Rutina Intensiva Recomendada';
+          routineList = `<li>Practica la meditación diariamente.</li>
+                         <li>Haz ejercicio al menos 30 minutos al día.</li>
+                         <li>Establece una hora de sueño regular.</li>
+                         <li>Considera la terapia o el coaching psicológico.</li>`;
+        } else if ([q1, q3, q4].includes('a_veces')) {
+          planTitle = 'Plan Moderado de Manejo de Estrés';
+          planDescription = 'Tu nivel de estrés es moderado. Considera implementar algunas técnicas de relajación y hábitos saludables en tu rutina.';
+          routineTitle = 'Rutina Moderada Recomendada';
+          routineList = `<li>Realiza ejercicios de respiración profunda.</li>
+                         <li>Practica yoga o estiramientos.</li>
+                         <li>Dedica tiempo a tus pasatiempos.</li>`;
+        } else {
+          planTitle = 'Plan de Mantenimiento de Salud Mental';
+          planDescription = '¡Estás haciendo un gran trabajo manteniendo un buen equilibrio! Continúa cuidando de tu salud mental.';
+          routineTitle = 'Rutina de Mantenimiento Recomendada';
+          routineList = `<li>Continúa practicando técnicas de relajación.</li>
+                         <li>Dedica tiempo a actividades recreativas.</li>
+                         <li>Mantén una alimentación equilibrada.</li>`;
+        }
+
+        document.getElementById('plan-title').textContent = planTitle;
+        document.getElementById('plan-description').textContent = planDescription;
+        document.getElementById('routine-title').textContent = routineTitle;
+        document.getElementById('routine-list').innerHTML = routineList;
+      }
+
+      mostrarPlan();
+
+      // Función para mostrar/ocultar la rutina personalizada
+      function toggleRoutine() {
+        const routineDiv = document.getElementById('routine');
+        routineDiv.style.display = routineDiv.style.display === 'none' ? 'block' : 'none';
+      }
+
+      // Función para descargar el plan
+      document.getElementById('downloadBtn').addEventListener('click', function() {
+        const planTitle = document.getElementById('plan-title').textContent;
+        const planDescription = document.getElementById('plan-description').textContent;
+        const routineTitle = document.getElementById('routine-title').textContent;
+        const routineList = document.getElementById('routine-list').innerHTML;
+
+        const content = `${planTitle}\n\n${planDescription}\n\n${routineTitle}\n\n${routineList.replace(/<li>/g, '• ').replace(/<\/li>/g, '')}`;
+        const blob = new Blob([content], { type: 'text/plain' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'Plan_Salud_Mental.txt';
+        link.click();
+      });
+    </script>
+  </div>
+</body>
+</html>
