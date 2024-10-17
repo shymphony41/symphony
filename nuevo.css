@@ -11,7 +11,7 @@ body {
     background: #05060f linear-gradient(0deg,rgba(216,236,248,.06),rgba(152,192,239,.06));
 
     font-size: max(calc(var(--_size) * 0.03), 10px);
-    --_factor: min(600px, 80vh);
+    --_factor: min(700px, 80vh);
     --_size: min(var(--_factor), 80vw);
 }
 
@@ -127,11 +127,11 @@ body.gold .header > div.mid-spot {
     cursor: pointer;
   position: relative;
   text-decoration: none;
-  margin: 10px;
+  margin: 40px;
   padding: 10px 24px;
   font-size: 18px;
   color: rgb(193, 163, 98);
-  border: 2px solid rgb(193, 163, 98);
+  border: 2px solid rgb(99, 117, 146);
   border-radius: 34px;
   background-color: transparent;
   font-weight: 600;
@@ -150,7 +150,7 @@ body.gold .header > div.mid-spot {
   border-radius: inherit;
   scale: 0;
   z-index: -1;
-  background-color: rgb(193, 163, 98);
+  background-color: #546377;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
   }
   
@@ -183,6 +183,10 @@ button.contact-btn {
     background: #121521;
     color: #9dc3f7;
     white-space:nowrap;
+}
+a {
+text-decoration: none;
+color: #bad1f1;
 }
 button.contact-btn::before {
     content: ''; display: block; position:absolute; left: 0; top:0; border-radius: 20em;
@@ -736,7 +740,7 @@ p {
 
 .results .result-box, .results .additional-result-box {
     width: calc(33.33% - 20px); /* Ajuste para el espacio entre los recuadros */
-    background: linear-gradient(135deg, #171b2b, #0c5580);
+    background: linear-gradient(135deg, #171b2b, #98c0ef);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -770,7 +774,7 @@ p {
 }
 
 .stat-box {
-    background: linear-gradient(135deg, #010831, #072249);
+    background: linear-gradient(135deg, #141627, #a2bee7);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
