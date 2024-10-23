@@ -17,10 +17,9 @@ body {
 
   background: #101522;
 	background-blend-mode: hard-light;
-	background-image: radial-gradient(circle at 20% 20%, #47391d3d 10%, #ffc35400 50%), radial-gradient(circle at 80% 80%, #0033ff25 10%, #0033ff00 50%),
-		radial-gradient(ellipse at 35% 70%, #11fa5341 10%, #00ff4800 50%), radial-gradient(ellipse at 70% 35%, #ff005d3f 10%, #cf32e400 60%);
+	background-image: radial-gradient(circle at 50% 45%, #47391d 10%, #a9cedd 70%), radial-gradient(ellipse at 35% 70%, #4ba35241 10%, #00ff4800 50%);
 	background-size: 250% 250%;
-	animation: background-animation 30s infinite;
+	animation: background-animation 10s infinite;
 }
 @keyframes background-animation {
 	0% {
@@ -76,7 +75,7 @@ body {
   --color: 348 80% 60%;
 }
 .card:nth-child(2) {
-  --color: 0 0% 100%;
+  --color: 150 0% 100%;
 }
 .card:nth-child(3) {
   --color: 220 100% 35%;
