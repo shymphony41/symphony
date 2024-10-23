@@ -206,4 +206,83 @@ nav ul li a:hover {
   .form-group textarea {
 	width: 100%; /* Área de texto ocupa el ancho completo */
   }
-  
+
+
+/* Estilo general para el diseño móvil */
+@media only screen and (max-width: 768px) {
+  /* Header y navegación */
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px; /* Aumentar la separación entre los elementos del menú */
+  }
+
+  nav .logo {
+    font-size: 1.7em; /* Aumentar el tamaño del logo en móviles */
+  }
+
+  /* Ajustar la tarjeta (formulario de la encuesta) */
+  .card {
+    width: 90%; /* Ocupa el 90% del ancho de la pantalla */
+    margin-top: 120px; /* Ajustar margen superior */
+    padding: 20px;
+  }
+
+  .card-header h3 {
+    font-size: 2.2em; /* Aumentar tamaño del título en móviles */
+  }
+
+  .card-content h2 {
+    font-size: 1.8em; /* Aumentar tamaño de subtítulo en móviles */
+  }
+
+  /* Formulario */
+  form label {
+    font-size: 1.1em; /* Texto de las etiquetas más grande */
+  }
+
+  form select,
+  form textarea,
+  form input[type="text"],
+  form input[type="number"] {
+    font-size: 1.1em; /* Texto dentro de los campos más grande */
+    padding: 0.8em; /* Más espacio dentro de los campos */
+  }
+
+  form button {
+    padding: 1em;
+    font-size: 1.2em; /* Botón más grande */
+  }
+}
+
+/* Para pantallas aún más pequeñas, como teléfonos con resoluciones muy bajas */
+@media only screen and (max-width: 480px) {
+  .card {
+    width: 95%; /* Más margen para pantallas muy pequeñas */
+  }
+
+  nav .logo {
+    font-size: 1.5em; /* Reducir un poco el tamaño del logo para pantallas pequeñas */
+  }
+
+  form button {
+    font-size: 1.1em; /* Botón un poco más grande */
+  }
+
+  /* Ajustar los márgenes y tamaños para pantallas más pequeñas */
+  .form-group input#name,
+  .form-group input#age {
+    width: 100%; /* Asegura que los campos ocupen todo el ancho en pantallas pequeñas */
+  }
+
+  .form-group select,
+  .form-group textarea {
+    width: 100%; /* Mantener el ancho completo para los selectores y textarea */
+  }
+}
+
