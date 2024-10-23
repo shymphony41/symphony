@@ -211,98 +211,80 @@ nav ul li a:hover {
 /* Estilos globales para móviles */
 @media (max-width: 768px) {
     body {
-        padding: 30px;
+        padding: 20px; /* Aumenta el padding para que haya más espacio alrededor */
     }
 
-    /* Aumentar el tamaño de la barra de navegación considerablemente */
     header {
-        padding: 50px 20px; /* Aumentar mucho el padding para que la barra sea muy alta */
-    }
-
-    nav .logo {
-        font-size: 3em; /* Aumentar considerablemente el tamaño del logo */
+        padding: 20px;
     }
 
     nav ul li a {
-        font-size: 2.5em; /* Aumentar considerablemente el tamaño del texto del menú */
-        padding: 20px 25px; /* Mucho más espacio alrededor de los enlaces */
+        font-size: 1.2em; /* Aumenta el tamaño del texto del menú */
+        padding: 15px; /* Más espacio en los enlaces del menú */
     }
 
-    /* Hacer el formulario mucho más grande */
     .card {
         width: 100%;
-        margin-top: 200px; /* Aumentar el espacio superior */
-        padding: 50px; /* Mucho más padding interno */
+        margin-top: 160px; /* Más espacio superior */
+        padding: 20px;
     }
 
     .card-header {
-        height: 180px; /* Mucho más alto el encabezado */
+        height: 100px; /* Mantener un tamaño adecuado */
     }
 
     .card-header h3 {
-        font-size: 3.5em; /* Título considerablemente más grande */
+        font-size: 2em; /* Aumenta el tamaño del título */
     }
 
     .card-content {
-        margin-top: 150px;
+        max-height: unset; /* Elimina la altura máxima */
+        margin-top: 120px;
     }
 
-    /* Aumentar mucho el tamaño de las etiquetas y campos del formulario */
     form label {
-        font-size: 2.2em; /* Mucho más grandes las etiquetas */
+        font-size: 1.2em; /* Aumenta el tamaño de los labels */
     }
 
     form input[type="text"],
     form input[type="number"],
     form select,
     form textarea {
-        font-size: 2em; /* Mucho más grandes los campos de entrada */
-        padding: 20px; /* Aumentar padding en los campos */
+        font-size: 1.1em; /* Aumenta el tamaño del texto de los campos */
+        padding: 15px; /* Aumenta el padding para que los campos sean más grandes */
     }
 
     form button {
-        padding: 30px; /* Botón mucho más grande */
-        font-size: 2.5em; /* Texto mucho más grande en el botón */
+        padding: 15px; /* Botón más grande */
+        font-size: 1.2em; /* Texto más grande en el botón */
     }
 
     .form-group {
-        margin-bottom: 2.5em; /* Espacio aún mayor entre preguntas */
+        margin-bottom: 2em; /* Más espacio entre las preguntas */
     }
 }
 
-/* Ajustes específicos para pantallas más pequeñas (menos de 360px) */
+/* Ajustes más específicos para pantallas muy pequeñas, como teléfonos de 360px de ancho */
 @media (max-width: 360px) {
-    /* Aumentar mucho más el tamaño de la barra de menú */
-    nav .logo {
-        font-size: 3.2em;
-    }
-
-    nav ul li a {
-        font-size: 2.7em;
-        padding: 25px;
-    }
-
-    /* Aumentar aún más el tamaño del formulario */
     .card-header h3 {
-        font-size: 3.2em;
+        font-size: 1.8em;
     }
 
     form label {
-        font-size: 2.5em; /* Más grande las etiquetas */
-    }
-
-    form input[type="text"],
-    form input[type="number"],
-    form select,
-    form textarea {
-        font-size: 2.3em;
-        padding: 25px; /* Mayor espacio de relleno */
+        font-size: 1.3em; /* Aumenta más el tamaño de los labels */
     }
 
     form button {
-        font-size: 2.7em; /* Botón más grande */
-        padding: 35px; /* Mucho más padding */
+        font-size: 1.3em; /* Botón aún más grande */
+    }
+
+    .form-group input#name,
+    .form-group input#age,
+    .form-group select,
+    .form-group textarea {
+        font-size: 1.2em; /* Aumenta el texto en los campos */
     }
 }
+
 
 
