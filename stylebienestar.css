@@ -208,81 +208,101 @@ nav ul li a:hover {
   }
 
 
-/* Estilo general para el diseño móvil */
-@media only screen and (max-width: 768px) {
-  /* Header y navegación */
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 15px;
-  }
+/* Estilos globales para móviles */
+@media (max-width: 768px) {
+    body {
+        padding: 30px;
+    }
 
-  nav ul {
-    flex-direction: column;
-    gap: 15px; /* Aumentar la separación entre los elementos del menú */
-  }
+    /* Aumentar el tamaño de la barra de navegación considerablemente */
+    header {
+        padding: 50px 20px; /* Aumentar mucho el padding para que la barra sea muy alta */
+    }
 
-  nav .logo {
-    font-size: 1.7em; /* Aumentar el tamaño del logo en móviles */
-  }
+    nav .logo {
+        font-size: 3em; /* Aumentar considerablemente el tamaño del logo */
+    }
 
-  /* Ajustar la tarjeta (formulario de la encuesta) */
-  .card {
-    width: 90%; /* Ocupa el 90% del ancho de la pantalla */
-    margin-top: 120px; /* Ajustar margen superior */
-    padding: 20px;
-  }
+    nav ul li a {
+        font-size: 2.5em; /* Aumentar considerablemente el tamaño del texto del menú */
+        padding: 20px 25px; /* Mucho más espacio alrededor de los enlaces */
+    }
 
-  .card-header h3 {
-    font-size: 2.2em; /* Aumentar tamaño del título en móviles */
-  }
+    /* Hacer el formulario mucho más grande */
+    .card {
+        width: 100%;
+        margin-top: 200px; /* Aumentar el espacio superior */
+        padding: 50px; /* Mucho más padding interno */
+    }
 
-  .card-content h2 {
-    font-size: 1.8em; /* Aumentar tamaño de subtítulo en móviles */
-  }
+    .card-header {
+        height: 180px; /* Mucho más alto el encabezado */
+    }
 
-  /* Formulario */
-  form label {
-    font-size: 1.1em; /* Texto de las etiquetas más grande */
-  }
+    .card-header h3 {
+        font-size: 3.5em; /* Título considerablemente más grande */
+    }
 
-  form select,
-  form textarea,
-  form input[type="text"],
-  form input[type="number"] {
-    font-size: 1.1em; /* Texto dentro de los campos más grande */
-    padding: 0.8em; /* Más espacio dentro de los campos */
-  }
+    .card-content {
+        margin-top: 150px;
+    }
 
-  form button {
-    padding: 1em;
-    font-size: 1.2em; /* Botón más grande */
-  }
+    /* Aumentar mucho el tamaño de las etiquetas y campos del formulario */
+    form label {
+        font-size: 2.2em; /* Mucho más grandes las etiquetas */
+    }
+
+    form input[type="text"],
+    form input[type="number"],
+    form select,
+    form textarea {
+        font-size: 2em; /* Mucho más grandes los campos de entrada */
+        padding: 20px; /* Aumentar padding en los campos */
+    }
+
+    form button {
+        padding: 30px; /* Botón mucho más grande */
+        font-size: 2.5em; /* Texto mucho más grande en el botón */
+    }
+
+    .form-group {
+        margin-bottom: 2.5em; /* Espacio aún mayor entre preguntas */
+    }
 }
 
-/* Para pantallas aún más pequeñas, como teléfonos con resoluciones muy bajas */
-@media only screen and (max-width: 480px) {
-  .card {
-    width: 95%; /* Más margen para pantallas muy pequeñas */
-  }
+/* Ajustes específicos para pantallas más pequeñas (menos de 360px) */
+@media (max-width: 360px) {
+    /* Aumentar mucho más el tamaño de la barra de menú */
+    nav .logo {
+        font-size: 3.2em;
+    }
 
-  nav .logo {
-    font-size: 1.5em; /* Reducir un poco el tamaño del logo para pantallas pequeñas */
-  }
+    nav ul li a {
+        font-size: 2.7em;
+        padding: 25px;
+    }
 
-  form button {
-    font-size: 1.1em; /* Botón un poco más grande */
-  }
+    /* Aumentar aún más el tamaño del formulario */
+    .card-header h3 {
+        font-size: 3.2em;
+    }
 
-  /* Ajustar los márgenes y tamaños para pantallas más pequeñas */
-  .form-group input#name,
-  .form-group input#age {
-    width: 100%; /* Asegura que los campos ocupen todo el ancho en pantallas pequeñas */
-  }
+    form label {
+        font-size: 2.5em; /* Más grande las etiquetas */
+    }
 
-  .form-group select,
-  .form-group textarea {
-    width: 100%; /* Mantener el ancho completo para los selectores y textarea */
-  }
+    form input[type="text"],
+    form input[type="number"],
+    form select,
+    form textarea {
+        font-size: 2.3em;
+        padding: 25px; /* Mayor espacio de relleno */
+    }
+
+    form button {
+        font-size: 2.7em; /* Botón más grande */
+        padding: 35px; /* Mucho más padding */
+    }
 }
+
 
