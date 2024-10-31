@@ -19,29 +19,33 @@ html {
 body {
     height: 160vh;
     color: #f0f0f0;
-    background: #101522;
-    background-blend-mode: hard-light;
-    background-image: radial-gradient(ellipse at 20% 20%, #769db84e 10%, #0d0b073c 50%),
-                      radial-gradient(ellipse at 60% 80%, #3215613d 10%, #7e0ea451 50%),
-                      radial-gradient(ellipse at 35% 70%, #4a028d4a 10%, #ca0fca3c 50%),
-                      radial-gradient(ellipse at 70% 35%, #d5d5d566 10%, #58869879 60%);
-    background-size: 250% 250%;
-    animation: background-animation 30s infinite;
+
 }
 
-@keyframes background-animation {
-    0% { background-position: 5% 0%; }
-    25% { background-position: 20% 80%; }
-    50% { background-position: 96% 100%; }
-    75% { background-position: 80% 10%; }
-    100% { background-position: 5% 0%; }
-}
+/* Estilo para el contenedor del video de fondo */
+.video-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Envía el contenedor al fondo */
+  }
+  
+  /* Estilo para el video */
+  .video-fondo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el video sin distorsionarse */
+  }
+  
 
 header {
-    background: linear-gradient(520deg, #1f0b78cb, #8505cf00, #5724ce2c);
+    background: linear-gradient(520deg, #000000cb, #8505cf00, #5724ce2c);
     color: #fff;
     padding: 20px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.596);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -54,6 +58,7 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    text-shadow: 0px 0px 20px rgb(255, 255, 255);
 }
 
 nav .logo {
@@ -71,6 +76,7 @@ nav ul {
 
 nav ul li {
     margin: 0;
+    text-shadow: 0px 0px 20px rgb(255, 255, 255);
 }
 
 nav ul li a {
@@ -115,7 +121,7 @@ nav ul li a:hover {
 
 h1 {
     color: white;
-    text-shadow: 0px 0px 20px cyan;
+    text-shadow: 0px 0px 20px rgb(255, 255, 255);
     font-size: 2.5em;
 }
 
