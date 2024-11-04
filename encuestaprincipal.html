@@ -102,24 +102,27 @@
     </div>
 
     <!-- Incluye EmailJS e integra el código JavaScript -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        (function() {
-            // Inicializa EmailJS con tu ID de usuario (reemplaza con el tuyo)
-            emailjs.init("AErxMDISdjFNUY2EV");
-        })();
+    const btn = document.getElementById('button');
 
-        // Captura el envío del formulario y envía los datos con EmailJS
-        document.getElementById("surveyForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-
-            emailjs.sendForm("service_k90bd9l", "template_rmo0bw5", this)
-                .then(function() {
-                    alert("La encuesta se ha enviado con éxito.");
-                }, function(error) {
-                    alert("Hubo un error al enviar la encuesta: " + JSON.stringify(error));
-                });
+    document.getElementById('form')
+     .addEventListener('submit', function(event) {
+       event.preventDefault();
+    
+       btn.value = 'Sending...';
+    
+       const serviceID = 'default_service';
+       const templateID = 'template_rmo0bw5';
+    
+       emailjs.sendForm(serviceID, templateID, this)
+        .then(() => {
+          btn.value = 'Send Email';
+          alert('Sent!');
+        }, (err) => {
+          btn.value = 'Send Email';
+          alert(JSON.stringify(err));
         });
+    });
     </script>
 </body>
 </html>
