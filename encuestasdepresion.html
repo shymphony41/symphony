@@ -3,30 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Encuesta de Salud Mental</title>
+  <title>Encuesta de Estrés y Ansiedad</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap">
   <link rel="stylesheet" href="styledepre.css">
 </head>
 <body>
 
   <header>
     <nav>
-        <div class="logo">Mente en armonía</div>
+        <div class="logo">Mente en Armonía</div>
         <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="encuestasemocionales.html">Regresar</a></li>
         </ul>
     </nav>
-</header>
+  </header>
 
   <div class="card">
     <div class="card-header">
-      <h3>Encuesta Depresión y Estado de Ánimo</h3>
+      <h3>Encuesta Estrés y Ansiedad</h3>
     </div>
     <div class="card-content">
       <h2>¡Gracias por participar en nuestra encuesta!</h2>
-      <form action="#" method="post">
+      <form id="stressForm" action="#" method="post">
         <div class="form-group">
           <label for="name">Nombre:</label>
           <input type="text" id="name" name="name" required>
@@ -45,8 +45,9 @@
           </select>
         </div>
 
+        <!-- Preguntas de la encuesta -->
         <div class="form-group">
-          <label for="q1">1. ¿Con qué frecuencia has experimentado sentimientos de tristeza o desesperanza en las últimas dos semanas?</label>
+          <label for="q1">1. ¿Con qué frecuencia experimentas altos niveles de estrés en tu vida diaria?</label>
           <select id="q1" name="q1" required>
             <option value="nunca">Nunca</option>
             <option value="rara_vez">Rara vez</option>
@@ -57,7 +58,7 @@
         </div>
 
         <div class="form-group">
-          <label for="q2">2. ¿Qué tan a menudo has sentido falta de interés o placer en hacer cosas que antes disfrutabas?</label>
+          <label for="q2">2. ¿Qué tan a menudo sientes ansiedad en situaciones cotidianas?</label>
           <select id="q2" name="q2" required>
             <option value="nunca">Nunca</option>
             <option value="rara_vez">Rara vez</option>
@@ -68,7 +69,7 @@
         </div>
 
         <div class="form-group">
-          <label for="q3">3. ¿Has tenido dificultades para concentrarte o tomar decisiones en las últimas semanas?</label>
+          <label for="q3">3. ¿Con qué frecuencia sientes síntomas físicos como tensión muscular, dolores de cabeza o fatiga debido al estrés?</label>
           <select id="q3" name="q3" required>
             <option value="nunca">Nunca</option>
             <option value="rara_vez">Rara vez</option>
@@ -79,7 +80,7 @@
         </div>
 
         <div class="form-group">
-          <label for="q4">4. ¿Con qué frecuencia te has sentido cansado/a o con falta de energía sin razón aparente?</label>
+          <label for="q4">4. ¿Con qué frecuencia sientes que tu ansiedad afecta tus relaciones personales o laborales?</label>
           <select id="q4" name="q4" required>
             <option value="nunca">Nunca</option>
             <option value="rara_vez">Rara vez</option>
@@ -90,7 +91,7 @@
         </div>
 
         <div class="form-group">
-          <label for="q5">5. ¿Qué estrategias has intentado para mejorar tu estado de ánimo o combatir la depresión?</label>
+          <label for="q5">5. ¿Cuáles son tus principales técnicas para gestionar el estrés o la ansiedad? (Escribe aquí)</label>
           <textarea id="q5" name="q5" rows="4" placeholder="Escribe aquí tu respuesta..." required></textarea>
         </div>
 
@@ -98,5 +99,26 @@
       </form>
     </div>
   </div>
+
+  <script>
+    document.getElementById('stressForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Evitar el envío del formulario por defecto
+
+      // Obtener las respuestas del formulario
+      const name = document.getElementById('name').value;
+      const age = document.getElementById('age').value;
+      const gender = document.getElementById('gender').value;
+      const q1 = document.getElementById('q1').value;
+      const q2 = document.getElementById('q2').value;
+      const q3 = document.getElementById('q3').value;
+      const q4 = document.getElementById('q4').value;
+      const q5 = document.getElementById('q5').value;
+
+      // Redirigir a la página de resultados con las respuestas en la URL
+      const resultPage = `resultadoestres.html?name=${encodeURIComponent(name)}&age=${encodeURIComponent(age)}&gender=${encodeURIComponent(gender)}&q1=${encodeURIComponent(q1)}&q2=${encodeURIComponent(q2)}&q3=${encodeURIComponent(q3)}&q4=${encodeURIComponent(q4)}&q5=${encodeURIComponent(q5)}`;
+      window.location.href = resultPage; // Redireccionar
+    });
+  </script>
+
 </body>
 </html>

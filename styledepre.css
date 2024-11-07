@@ -40,10 +40,10 @@ body {
 }
 
 header {
-    background: linear-gradient(520deg, #1f0b7800, #8505cf00, #5724ce00);
+    background: linear-gradient(520deg, #100c2563, #8505cf00, #0000004e);
     color: #fff;
     padding: 20px;
-    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    box-shadow: 0 1px 20px rgb(0, 0, 0);
     position: fixed;
     width: 100%; /* Extiende el header a todo el ancho */
     top: 0;
@@ -97,7 +97,7 @@ nav ul li a:hover {
     overflow: hidden;
     background-color: #000000;
     padding: 20px;
-    background: linear-gradient(135deg, #f41dff7e, #00000086, #15fff36e);
+    background: linear-gradient(135deg, #0000007e, #00000086, #c415ff6e);
     background-blend-mode: overlay;
 }
 
