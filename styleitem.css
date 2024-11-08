@@ -64,7 +64,7 @@ main {
 
 h2 {
     font-weight: 600;
-    font-size: 2.5em;
+    font-size: 2em;
     margin-bottom: 20px;
     color: white;
     text-shadow: 0px 0px 10px cyan;
@@ -82,7 +82,7 @@ h2::after {
 }
 
 p {
-    font-size: 1.2em;
+    font-size: 1.1em;
     margin-bottom: 30px;
     line-height: 1.6;
     color: #ffffff;
@@ -175,22 +175,25 @@ input[type="text"]:focus {
 }
 
 button {
-    background-color: #00796b;
-    color: white;
+    background-color: #2a7cf0;
+    color: rgb(255, 255, 255);
     padding: 12px;
+    margin: 10px;
     border: none;
-    border-radius: 4px;
+    border-radius: 30px;
     cursor: pointer;
     font-size: 1em;
     font-weight: 600;
     transition: background-color 0.3s ease;
     display: flex;
-  justify-content: center;
-  align-items: center;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none !important;
 }
 
 button:hover {
-    background-color: #004d40;
+    background-color: #9dc3f7;
+    box-shadow: 0 0px 20px rgb(98, 163, 193);
 }
 
 /* Footer */
@@ -202,4 +205,20 @@ footer {
     margin-top: 40px;
     font-size: 0.9em;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.autoShow{
+    animation: autoShowAnimation both;
+    animation-timeline: view(70% 5%);
+
+}
+
+@keyframes autoShowAnimation{
+    from{
+        opacity: 0;
+        transform: translateY(200px) scale(0.3);
+    }to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
