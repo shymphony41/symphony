@@ -84,15 +84,23 @@ h2 a {
     width: fit-content;
 }
 
+.header > :nth-child(4) {
+    font-size: 18px;
+    position: absolute; left: 26em; right: 0; margin: 0 auto;
+    width: fit-content;
+}
+
 .header > h2{
     opacity: 0.5;
     cursor: pointer;
     transition: opacity 0.04s ease-in-out;
+    transition: transform 0.3s ease; /* Suaviza el efecto */
 }
 .header > h2:hover {
     opacity: 1;
     text-shadow: 0 2px 16px rgba(174,207,242, 0.6);
     width: fit-content;
+    transform: scale(1.2); /* Agranda el texto al 120% de su tamaño original */
 }
 
 .header > div.mid-spot {
@@ -121,6 +129,7 @@ body.gold .header > div.mid-spot {
     0%{filter: hue-rotate(0deg); }
     100% {filter: hue-rotate(-380deg);}
 }
+
 
 .sex{
 
@@ -198,7 +207,7 @@ body.gold .header > div.mid-spot {
 
 /* From Uiverse.io by mrtqzbek11 */ 
 .boton-primario {
-    cursor: pointer;
+  cursor: pointer;
   position: relative;
   text-decoration: none;
   margin: 40px;
@@ -235,7 +244,7 @@ body.gold .header > div.mid-spot {
   .boton-primario:hover {
     color: #212121;
     scale: 1.1;
-    box-shadow: 0 0px 20px rgba(193, 163, 98,0.4);
+    box-shadow: 0 0px 20px rgba(103, 191, 218, 0.4);
   }
   
   .boton-primario:active {
@@ -885,7 +894,7 @@ p {
 /* Dispositivos móviles pequeños (hasta 600px) */
 @media (max-width: 600px) {
     .header h2 {
-        font-size: 0.8em;
+        font-size: 2em;
     }
     .contact-btn {
         left: 0;
