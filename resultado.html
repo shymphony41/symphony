@@ -16,6 +16,17 @@
   </style>
 </head>
 <body>
+
+  <header>
+    <nav>
+        <div class="logo">Mente en armonía</div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="encuestabienestar.html">Regresar</a></li>
+        </ul>
+    </nav>
+</header>
+
   <div class="result">
     <h2>Resultados de la Encuesta</h2>
     <div id="feedback">
@@ -120,6 +131,7 @@
       routineDiv.style.display = routineDiv.style.display === 'none' ? 'block' : 'none';
     }
 
+
     // Función para descargar la rutina en PDF
     document.getElementById('downloadBtn').addEventListener('click', function() {
   const { jsPDF } = window.jspdf;
@@ -198,6 +210,7 @@
   // Descargar el PDF
   doc.save('Rutina-Personalizada.pdf');
 });
+
   </script>
 </body>
 </html>
