@@ -18,10 +18,10 @@
         </video>
     </div>
 
-    <!-- Contenido de la página -->
+    <!-- Menú de navegación -->
     <header>
         <nav>
-            <div class="logo">Mente en armonía</div>
+            <div class="logo">Mente en Armonía</div>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="apartadocajajuego.html">Juegos</a></li>
@@ -30,66 +30,38 @@
         </nav>
     </header>
 
-    <main>
-        <div class="header">
-            <h1>Soluciones para tu Bienestar Mental</h1>
-        </div>
+    <!-- Título principal -->
+    <div class="header">
+        <h1>Soluciones para tu Bienestar Mental</h1>
+    </div>
 
-        <div class="container">
-            <div class="solution-card">
+    <!-- Contenedor de tarjetas centrado -->
+    <main>
+        <div class="card-container">
+            <div class="solution-card active">
                 <h2>Psicoterapia</h2>
-                <p>La psicoterapia es un tratamiento que utiliza técnicas psicológicas para ayudar a las personas a superar problemas emocionales, conductuales y mentales. Se lleva a cabo en sesiones de conversación entre un terapeuta capacitado y el paciente, y se basa en la idea de que los pensamientos, emociones y comportamientos están interrelacionados.</p>
+                <p>La psicoterapia es un tratamiento que utiliza técnicas psicológicas para ayudar a las personas a superar problemas emocionales, conductuales y mentales.</p>
                 <a class="btn" href="psicoterapia.html">¡Me interesa!</a>
             </div>
-
             <div class="solution-card">
                 <h2>Medicación</h2>
-                <p>La medicación psicológica, también conocida como psicofarmacología o medicación psiquiátrica, se refiere al uso de medicamentos para tratar trastornos mentales y emocionales. Estos medicamentos son recetados por profesionales de la salud mental, como psiquiatras, y están diseñados para aliviar los síntomas de trastornos mentales, mejorar el bienestar y ayudar a las personas a funcionar mejor en su vida diaria.</p>
+                <p>La medicación psicológica ayuda a aliviar síntomas de trastornos mentales y mejorar el bienestar diario. Estos medicamentos son prescritos por psiquiatras.</p>
                 <a class="btn" href="medicacion.html">¡Me interesa!</a>
             </div>
-
             <div class="solution-card">
                 <h2>Estilo de Vida Saludable</h2>
-                <p>Un estilo de vida saludable tiene un impacto significativo en la salud mental, ya que las decisiones diarias relacionadas con la alimentación, el ejercicio, el sueño y el manejo del estrés contribuyen directamente al bienestar emocional y psicológico.</p>
+                <p>Las decisiones diarias en alimentación, ejercicio y manejo del estrés contribuyen directamente al bienestar emocional y psicológico.</p>
                 <a class="btn" href="estilodevida.html">¡Me interesa!</a>
             </div>
-
             <div class="solution-card">
                 <h2>Red de Apoyo</h2>
-                <p>Tener una red de apoyo es fundamental para el bienestar emocional por varias razones clave. Estas redes, compuestas por amigos, familiares, colegas y otros seres queridos, brindan un entorno seguro y comprensivo donde se pueden compartir experiencias, recibir consejos y encontrar consuelo en momentos difíciles.</p>
+                <p>Una red de apoyo brinda un entorno seguro y comprensivo para compartir experiencias y encontrar consuelo en momentos difíciles.</p>
                 <a class="btn" href="reddeapoyo.html">¡Me interesa!</a>
             </div>
         </div>
 
-        <div class="container">
-            <div class="solution-card">
-                <h2>Técnicas de Relajación</h2>
-                <p>Las técnicas de relajación son herramientas valiosas para el bienestar emocional, ya que ayudan a gestionar el estrés, reducir la ansiedad, mejorar el estado de ánimo y aumentar la resiliencia frente a los desafíos diarios.</p>
-                <a class="btn" href="relajacion.html">¡Me interesa!</a>
-            </div>
-
-            <div class="solution-card">
-                <h2>Educación y Conciencia</h2>
-                <p>Informarse sobre salud mental: Conocer más sobre los trastornos mentales puede ayudar a reconocer síntomas y buscar ayuda temprana.</p>
-                <p>Eliminar el estigma: Hablar abiertamente sobre salud mental puede reducir el estigma y fomentar un ambiente de apoyo.</p>
-                <a class="btn" href="educacion.html">¡Me interesa!</a>
-            </div>
-
-            <div class="solution-card">
-                <h2>Estrategias de Autocuidado</h2>
-                <p>Establecer límites: Aprender a decir no y manejar el tiempo efectivamente.</p>
-                <p>Tomar descansos regulares: Es importante desconectar y relajarse.</p>
-                <p>Hobbies y actividades recreativas: Mantenerse activo en actividades que te gustan.</p>
-                <a class="btn" href="autocuidado.html">¡Me interesa!</a>
-            </div>
-
-            <div class="solution-card">
-                <h2>Ejercicio Físico Regular</h2>
-                <p>Realizar actividad física ayuda a liberar endorfinas y serotonina, que mejoran el estado de ánimo y reducen el estrés. El ejercicio moderado (caminar, correr, yoga) ha mostrado efectos positivos en la ansiedad y la depresión.</p>
-                <a class="btn" href="medicacion.html">¡Me interesa!</a>
-            </div>
-
-        </div>
+        <!-- Botón para navegar entre tarjetas -->
+        <button class="nav-button" onclick="nextCard()">›</button>
     </main>
 
     <script src="soluciones.js"></script>
