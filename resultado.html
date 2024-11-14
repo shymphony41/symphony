@@ -122,21 +122,82 @@
 
     // Función para descargar la rutina en PDF
     document.getElementById('downloadBtn').addEventListener('click', function() {
-      const { jsPDF } = window.jspdf; // Asegúrate de tener jsPDF disponible
-      const doc = new jsPDF();
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
 
-      // Agrega el título al PDF
-      doc.setFontSize(22);
-      doc.text('Rutina Personalizada de Bienestar Mental', 20, 20);
+  // Estilos generales
+  const marginLeft = 20;
+  let currentY = 20;
 
-      // Extraer el contenido de la rutina y agregarlo al PDF
-      const routineContent = document.getElementById('routine').innerText;
-      doc.setFontSize(14);
-      doc.text(routineContent, 20, 40);
+  // Título principal
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(22);
+  doc.setTextColor(40, 40, 100); // Color azul oscuro
+  doc.text('Rutina Personalizada de Bienestar Mental', marginLeft, currentY);
+  currentY += 10;
 
-      // Descargar el PDF
-      doc.save('Rutina-Personalizada.pdf');
+  // Línea debajo del título
+  doc.setDrawColor(40, 40, 100); 
+  doc.line(marginLeft, currentY, 190, currentY);
+  currentY += 10;
+
+  // Introducción de la rutina
+  const planTitle = document.getElementById('plan-title').innerText;
+  const planDescription = document.getElementById('plan-description').innerText;
+
+  doc.setFontSize(16);
+  doc.setTextColor(60, 60, 60);
+  doc.text(planTitle, marginLeft, currentY);
+  currentY += 10;
+
+  doc.setFontSize(12);
+  doc.setTextColor(80, 80, 80);
+  doc.text(planDescription, marginLeft, currentY);
+  currentY += 20;
+
+  // Rutina de semanas
+  const routineList = document.querySelectorAll('#routine-list li');
+  routineList.forEach((item, index) => {
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(14);
+    doc.setTextColor(0, 102, 204); // Color de título de cada semana
+    doc.text(`Semana ${index + 1}:`, marginLeft, currentY);
+
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(12);
+    doc.setTextColor(50, 50, 50);
+    const textLines = doc.splitTextToSize(item.innerText, 170);
+    textLines.forEach((line) => {
+      currentY += 8;
+      doc.text(line, marginLeft, currentY);
     });
+    currentY += 15; // Espacio entre semanas
+  });
+
+  // Espacio adicional antes del mensaje motivacional
+  currentY += 20;
+
+  // Mensaje motivacional centrado
+  const motivationalMessage = '"Recuerda que cada paso hacia el bienestar cuenta, y el esfuerzo que haces hoy construye un mejor mañana."';
+  doc.setFont("helvetica", "italic");
+  doc.setFontSize(12);
+  doc.setTextColor(100, 100, 100); // Color gris para el mensaje
+  const motivationalLines = doc.splitTextToSize(motivationalMessage, 170);
+  motivationalLines.forEach((line) => {
+    doc.text(line, 105, currentY, { align: "center" });
+    currentY += 8;
+  });
+
+  // Firma centrada
+  currentY += 10;
+  doc.setFont("helvetica", "bold");
+  doc.setFontSize(12);
+  doc.setTextColor(60, 60, 60);
+  doc.text("Atentamente, Mente en Armonía", 105, currentY, { align: "center" });
+
+  // Descargar el PDF
+  doc.save('Rutina-Personalizada.pdf');
+});
   </script>
 </body>
 </html>
