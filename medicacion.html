@@ -13,15 +13,34 @@
     background: #05060f linear-gradient(0deg,rgba(216,236,248,.06),rgba(116, 167, 224, 0.06));
     color: #333;
         }
-        
-        header {
-    background: linear-gradient(520deg, #4aa8d3cb, #000000, #ada20a8a);
-    color: #fff;
-    padding: 20px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: sticky;
+
+/* Estilo para el contenedor del video de fondo */
+.video-fondo {
+    position: fixed;
     top: 0;
-    z-index: 1000;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Envía el contenedor al fondo */
+  }
+  
+  /* Estilo para el video */
+  .video-fondo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta el video sin distorsionarse */
+  }
+
+        
+header {
+background: linear-gradient(520deg, #98c0ef, #000000, #0000008a);
+color: #fff;
+padding: 20px 0;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+position: sticky;
+top: 0;
+z-index: 1000;
 }
 
 nav {
@@ -76,23 +95,25 @@ nav ul li a:hover {
         }
         
         h2 {
-            font-weight: 600;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: white;
-    text-shadow: 0px 0px 10px cyan;
-            position: relative;
-        }
-        
-        h2::after {
-            content: '';
-            width: 700px;
-            height: 3px;
-            background-color: #0b9b6b;
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-        }
+    font-weight: 600;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #e7f2ff;
+    text-shadow: 0px 0px 10px #98c0ef;
+    position: relative;
+    font-family: Arial Black;
+}
+
+h2::after {
+    content: '';
+    width: 780px;
+    height: 3px;
+    background-color: #98c0ef;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+
         
         p {
             font-size: 1.2em;
@@ -127,17 +148,46 @@ nav ul li a:hover {
             margin: 0 auto;
         }
         
-        @media only screen and (max-width: 600px) {
-          video {
-            width: 100%; /* El video ocupará el 100% del ancho en pantallas pequeñas */
-            height: auto;
-          }
-        }
+        .autoShow{
+    animation: autoShowAnimation both;
+    animation-timeline: view(70% 5%);
+
+}
+
+@keyframes autoShowAnimation{
+    from{
+        opacity: 0;
+        transform: translateY(200px) scale(0.3);
+    }to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+  video {
+    width: 100%; /* El video ocupará el 100% del ancho en pantallas pequeñas */
+    height: auto;
+  }
+
+ h2::after {
+    width: 280px;
+  }
+  
+}
         
         
         </style>
 </head>
 <body>
+
+        <!-- Contenedor del video de fondo -->
+        <div class="video-fondo">
+            <video autoplay muted loop playsinline>
+                <source src="img/Estrellas.mp4" type="video/mp4">
+                Tu navegador no soporta el video.
+            </video>
+        </div>
 
     <header>
         <nav>
@@ -157,11 +207,13 @@ nav ul li a:hover {
 </section>
 
 <main>
+    <div class="autoShow">
     <div class="video-wrapper">
     <center>
         <iframe width="600" height="372" src="https://www.youtube.com/embed/ckQkxqlsGZA" title="Los beneficios de la medicación en el tratamiento de trastornos mentales" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </center>
 </main>
+</div>
 </div>
 
 </body>
