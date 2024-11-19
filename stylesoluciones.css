@@ -39,7 +39,7 @@ header {
     background: linear-gradient(520deg, #dfdfdf2c, #8505cf00, #ecebed82);
     color: #fff;
     padding: 13px;
-    box-shadow: 0 4px 8px rgb(251 251 251 / 90%)
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.9);
     position: fixed;
     width: 100%; /* Extiende el header a todo el ancho */
     top: 0;
