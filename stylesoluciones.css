@@ -36,13 +36,14 @@ body {
 
 /* Header y menú de navegación */
 header {
-    background: linear-gradient(520deg, #000000cb, #8505cf00, #5724ce2c);
+    background: linear-gradient(520deg, #ffffff7c, #8505cf00, #c4c4c486);
     color: #fff;
-    padding: 20px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.596);
+    padding: 13px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
     position: fixed;
-    width: 100%;
+    width: 100%; /* Extiende el header a todo el ancho */
     top: 0;
+    left: 0;
     z-index: 1000;
 }
 
@@ -115,7 +116,7 @@ p:hover {
 
 /* Estilos para el h2 */
 h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: "Montserrat";
     font-size: 2em;
     color: #fff;
     text-align: center;
@@ -123,12 +124,10 @@ h2 {
     letter-spacing: 2px;
     margin: 30px 0 15px;
     font-weight: 600;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 2px 6px rgba(233, 233, 233, 0.9);
+
 }
 
-h2:hover {
-    color: #56c7ff;
-}
 
 /* Contenedor de tarjetas */
 .card-container {
@@ -139,6 +138,16 @@ h2:hover {
     position: relative;
     flex-direction: column;
 }
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Ajusta a múltiples filas si no caben */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    min-height: 10vh; /* Ocupa toda la altura de la ventana */
+    gap: 20px; /* Espaciado entre tarjetas */
+    padding: 20px; /* Margen interno */
+}
+
 
 /* Estilos iniciales de las tarjetas */
 .solution-card {
@@ -186,7 +195,7 @@ h2:hover {
 .nav-button {
     position: fixed;
     top: 50%; /* Centrado verticalmente */
-    right: 600px; /* Separación desde el borde derecho */
+    right: 30px; /* Ajustado desde el borde derecho */
     transform: translateY(-50%); /* Ajuste para centrar completamente */
     background: linear-gradient(135deg, #000000, #000000); /* Degradado vibrante */
     color: #fff;
@@ -199,11 +208,13 @@ h2:hover {
     transition: all 0.4s ease-in-out;
     backdrop-filter: blur(5px); /* Fondo con desenfoque sutil */
     animation: pulse 2s infinite; /* Animación de pulso para llamar la atención */
+    z-index: 1000; /* Asegura que esté sobre otros elementos */
 }
+
 /* Efecto al pasar el cursor */
 .nav-button:hover {
-    background: linear-gradient(135deg, #ffffff, #ff00b3); /* Transición de color más vibrante */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7), 0 0 40px rgba(255, 0, 255, 0.5); /* Resplandor intenso */
+    background: linear-gradient(135deg, #ffffff, #e4e4e4); /* Transición de color más vibrante */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.9), 0 0 40px rgba(255, 255, 255, 0.5); /* Resplandor intenso */
     transform: translateY(-50%) scale(1.2); /* Aumento de tamaño suave */
     border-color: #ffffff; /* Borde luminoso */
     color: #000000;
@@ -222,6 +233,17 @@ h2:hover {
     }
 }
 
+/* Adaptación para móviles */
+@media (max-width: 768px) {
+    .nav-button {
+        right: 15px; /* Menor separación desde el borde derecho */
+        padding: 12px 16px; /* Tamaño más pequeño */
+        font-size: 24px; /* Fuente más pequeña */
+        box-shadow: 0 0px 15px rgba(200, 200, 200, 0.5), 0 0 10px rgba(255, 255, 255, 0.2); /* Menor intensidad de sombra */
+    }
+}
+
+
 
 
 /* Botón de interés */
@@ -234,10 +256,18 @@ h2:hover {
     box-shadow: 0 0px 30px 6px rgba(255, 255, 255, 0.5);
     transition: all 0.3s ease-in-out;
     margin-top: auto;
+    text-decoration: none;
 }
 
 .btn:hover {
-    transform: translateY(3px);
+    transform: translateY(-5px);
+    color: #000000;
+    background: linear-gradient(135deg, #fffffff5 0%, #fffffffd 100%);
+    border: 2px solid rgb(255, 255, 255);
+    padding: 10px 20px;
+    cursor: pointer;
+    box-shadow: 0 0px 25px rgb(230, 230, 230), 0 0 20px rgba(255, 255, 255, 0.2); /* Sombra más intensa y efecto de resplandor */
+    transition: all 0.4s ease-in-out;
 }
 
 @media (max-width: 768px) {
