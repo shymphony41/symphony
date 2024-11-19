@@ -10,6 +10,7 @@ body {
     overflow: hidden;
 }
 
+/* Animación de fondo */
 @keyframes background-animation {
     0% { background-position: 5% 0%; }
     25% { background-position: 20% 80%; }
@@ -17,8 +18,9 @@ body {
     75% { background-position: 80% 10%; }
     100% { background-position: 5% 0%; }
 }
-  /* Menú arcade */
-  .arcade-menu {
+
+/* Menú Arcade */
+.arcade-menu {
     background-color: #000000;
     padding: 28px;
     text-align: center;
@@ -31,12 +33,12 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: inline-block;
+    display: flex; /* Cambio para hacer el menú horizontal */
+    justify-content: center; /* Centra el menú en el contenedor */
 }
 
 .arcade-menu ul li {
-    display: inline;
-    margin-right: 20px;
+    margin-right: 20px; /* Espaciado entre los elementos */
 }
 
 .arcade-menu ul li a {
@@ -55,21 +57,21 @@ body {
     color: #ffffff;
 }
 
-
+/* Estilos para la clase container */
 .container {
     position: absolute;
-    left:50%;
-    top:50%;
-    transform: translate(-50%,-50%);
-    width:800px;
-    height:400px;
-    padding:50px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 400px;
+    padding: 50px;
     background-color: #2c2c2c;
     box-shadow: 0 30px 50px #000000;
     border-radius: 15px;
 }
 
-/* Estilo de los recuadros arcade */
+/* Estilos para los recuadros arcade (items) */
 .item {
     width: 200px;
     height: 300px;
@@ -177,6 +179,7 @@ body {
     }
 }
 
+/* Estilos para los botones */
 .buttons {
     position: absolute;
     bottom: 30px;
@@ -200,15 +203,20 @@ body {
 /* Dispositivos móviles pequeños (hasta 600px) */
 @media (max-width: 600px) {
     .container {
-        width:300px;
-        height:360px;
+        width: 300px;
+        height: 360px;
     }
-}
-/* Tablets (entre 600px y 900px) */
-@media (min-width: 600px) and (max-width: 900px) {
-    .container {
-        width:300px;
-        height:360px;
+
+    .arcade-menu {
+        display: flex;
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
     }
 }
 
+/* Tablets (entre 600px y 900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+    .container {
+        width: 800px;
+        height: 400px;
+    }
+}
