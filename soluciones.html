@@ -12,7 +12,7 @@
 <body>
     <!-- Contenedor del video de fondo -->
     <div class="video-fondo">
-        <video autoplay muted loop playsinline>
+        <video autoplay muted loop playsinline id="backgroundVideo">
             <source src="img/Estrellas.mp4" type="video/mp4">
             Tu navegador no soporta el video.
         </video>
@@ -92,6 +92,19 @@
         <button class="nav-button" onclick="nextCard()">›</button>
     </main>
 
+<script>
+        // JavaScript para hacer que el video de fondo reaccione al movimiento del mouse
+        const video = document.getElementById("backgroundVideo");
+        
+        document.addEventListener("mousemove", (e) => {
+            const xPos = e.clientX / window.innerWidth;
+            const yPos = e.clientY / window.innerHeight;
+        
+            const scale = 1 + xPos * 0.1;  // Escala basada en la posición X
+            video.style.transform = `scale(${scale}) translate(${xPos * 10}px, ${yPos * 10}px)`;
+        });
+        </script>
+        
     <script src="soluciones.js"></script>
 </body>
 </html>
